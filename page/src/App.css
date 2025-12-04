@@ -1,0 +1,878 @@
+/* ============================================
+    GLOBAL STYLES - Modify these for site-wide changes
+    ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap');
+
+body {
+      font-family: 'Outfit', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+    background-color: var(--background-white);
+    color: var(--text-dark);
+    transition: background-color 0.5s ease, color 0.5s ease;
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+.App {
+    min-height: 100vh;
+}
+
+.inline-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: border-bottom 0.3s ease, color 0.3s ease;
+}
+
+.inline-link:hover {
+    color: var(--primary-color-light);
+}
+
+body.dark-mode .inline-link {
+    color: var(--secondary-color);
+}
+
+body.dark-mode .inline-link:hover {
+    color: var(--tertiary-color);
+}
+
+.about-feature-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    color: var(--secondary-color); 
+}
+
+body.dark-mode .about-feature-icon {
+    color: var(--tertiary-color);
+}
+
+.section-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    max-width: 80%;
+}
+
+/* ============================================
+    COLOR SCHEME - Change these to customize colors
+    ============================================ */
+:root {
+    --primary-color: #c720bc;
+    --primary-color-light: #ff9dff;
+    --secondary-color: #00523E; 
+    --tertiary-color: #6DBAA1; 
+    --accent-color: #FFF8F0;
+    
+    /* Light mode colors */
+    --text-dark-lm: #1c1c1e;
+    --text-light-lm: #5a5a5f;
+    --text-medium-lm: #3a3a3f;
+    --background-light-lm: #FFF8F0;
+    --background-white-lm: #F5F5F0;
+    --hero-cta-button-color-lm: var(--text-dark-lm);
+    
+    /* Dark mode colors */
+    --text-dark-dm: #e8e8e8;
+    --text-light-dm: #b0b0b0;
+    --text-medium-dm: #d0d0d0;
+    --background-dark-dm: #1a1a1a;
+    --background-dark-secondary-dm: #252525;
+    --hero-cta-button-color-dm: var(--text-dark-dm);
+
+    /* Dynamic Colors (Default to Light Mode) */
+    --text-dark: var(--text-dark-lm);
+    --text-light: var(--text-light-lm);
+    --text-medium: var(--text-medium-lm);
+    --background-light: var(--background-light-lm);
+    --background-white: var(--background-white-lm);
+    --section-background: var(--background-white-lm);
+    --card-background: white;
+    --hero-cta-button-color: var(--hero-cta-button-color-lm);
+}
+
+/* Dark Mode Switch */
+body.dark-mode {
+    --text-dark: var(--text-dark-dm);
+    --text-light: var(--text-light-dm);
+    --text-medium: var(--text-medium-dm);
+    --background-light: var(--background-dark-secondary-dm);
+    --background-white: var(--background-dark-dm);
+    --section-background: var(--background-dark-dm);
+    --card-background: var(--background-dark-secondary-dm);
+    --hero-cta-button-color: var(--hero-cta-button-color-dm);
+    
+
+    .team-section {
+        background-color: var(--background-light); 
+    }
+}
+
+/* ============================================
+    NAVIGATION BAR (FIXED STYLES)
+    ============================================ */
+.navbar {
+    /* FIXED STYLE: Transparent background with blur */
+    background-color: rgba(0, 0, 0, 0.058); 
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.nav-logo {
+    color: white; 
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    gap: 8px;
+}
+
+/* Theme Toggle Button */
+/* Theme Toggle Switch */
+.theme-toggle {
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.toggle-track {
+    width: 70px;
+    height: 35px;
+    background: rgba(255, 248, 240, 0.2);
+    border: 2px solid rgba(255, 248, 240, 0.3);
+    border-radius: 50px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.toggle-track:hover {
+    background: rgba(255, 248, 240, 0.3);
+}
+
+.toggle-slider {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 27px;
+    height: 27px;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* When in dark mode, slide to the right and show moon (月) */
+.toggle-track.dark .toggle-slider {
+    left: 37px;
+    color: var(--secondary-color);
+}
+
+/* When in light mode, stay on the left and show sun (日) */
+.toggle-track.light .toggle-slider {
+    left: 2px;
+    color: var(--primary-color);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    /* FIXED STYLE: Always light/semi-transparent white */
+    color: rgba(255, 248, 240, 0.8); 
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    /* FIXED STYLE: Always solid white on hover */
+    color: rgba(255, 248, 240, 1);
+    transform: scale(1.08);
+}
+
+/* ============================================
+    ANIMATIONS
+    ============================================ */
+
+ @keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+ }
+
+ @keyframes breathe {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.01);
+    }
+ }
+
+ @keyframes hover-breathe {
+    0%, 100% {
+        transform: scale(1.08); 
+    }
+    50% {
+        transform: scale(1.10); 
+    }
+}
+
+
+/* ============================================
+    SECTION STYLES - All sections share these
+    ============================================ */
+.section {
+    min-height: 100vh;
+    padding: 100px 20px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.section-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--text-dark);
+    transition: color 0.5s ease;
+}
+
+/* ============================================
+    HOME/HERO SECTION
+    ============================================ */
+
+.hero-section {
+    background: 
+        radial-gradient(circle at 10% 10%, var(--primary-color) 0%, transparent 50%),
+        radial-gradient(circle at 90% 50%, var(--secondary-color) 0%, transparent 50%),
+        radial-gradient(circle at 20% 90%, var(--tertiary-color) 0%, transparent 35%),
+        var(--background-dark-dm); 
+    color: white;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-breathing-wrapper {
+    animation: breathe 4s ease-in-out 1.5s infinite;
+}
+
+.hero-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 30px;
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+    opacity: 0.95;
+    animation: fadeIn 1.2s ease-out forwards;
+}
+
+.cta-button {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background-color: white;
+    color: var(--hero-cta-button-color); 
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    animation: fadeIn 1.5s ease-out forwards;
+    opacity: 0.7;
+}
+
+body.dark-mode .cta-button {
+    background-color: var(--text-dark-dm); 
+    color: var(--background-dark-dm);
+}
+
+.cta-button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+}
+
+.hero-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-right: 20px;
+    vertical-align: middle;
+}
+
+.hero-logo-letter {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 900;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-logo-letter::before {
+    content: attr(data-letter);
+    position: absolute;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeIn 1.8s ease-out forwards;
+}
+
+.hero-subtitle-top {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    animation: fadeIn 1.8s ease-out forwards;
+}
+
+.hero-divider {
+    width: 80px;
+    height: 3px;
+    background: white;
+    margin: 30px auto;
+    border-radius: 2px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.85;
+    font-weight: 400;
+    animation: fadeIn 2s ease-out forwards;
+}
+
+/* ============================================
+    ABOUT SECTION
+    ============================================ */
+.about-section {
+    background-color: var(--section-background);
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.about-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 25px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 30px;
+    /* Gradient remains the same as it's a feature, not a theme-toggle */
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border-radius: 15px;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+/* Image-Text Sections */
+.about-image-text-section {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin: 80px auto;
+    max-width: 1000px;
+}
+
+.about-image-text-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.about-image-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-image {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode .about-image {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.about-text-container {
+    flex: 1;
+    text-align: left;
+}
+
+.about-text-container h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.about-text-container p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .about-image-text-section,
+    .about-image-text-section.reverse {
+        flex-direction: column;
+    }
+    
+    .about-text-container {
+        text-align: center;
+    }
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.about-features {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-feature-item {
+    display: flex;
+    align-items: start;
+    gap: 20px;
+    padding: 0;
+    background: none;
+}
+
+.about-feature-text {
+    flex: 1;
+    text-align: left;
+}
+
+.about-feature-text h4 {
+    font-size: 1.2rem;
+    /* Use dynamic dark text color */
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.about-feature-text p {
+    font-size: 1rem;
+    /* Use dynamic light text color */
+    color: var(--text-light);
+    line-height: 1.6;
+    margin: 0;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .about-feature-item {
+        flex-direction: column;
+    }
+    
+    .about-feature-text {
+        text-align: left;
+    }
+}
+
+/* ============================================
+    TEAM SECTION
+    ============================================ */
+.team-section {
+    background-color: var(--background-light);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 350px));
+    gap: 40px;
+    justify-content: center;
+}
+
+.team-card {
+    background: var(--card-background);
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.5s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 350px;
+}
+
+body.dark-mode .team-card {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+
+.team-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    animation: hover-breathe 4s ease-in-out 0.4s infinite;
+}
+
+body.dark-mode .team-card:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+.team-card-placeholder {
+    opacity: 0.5;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.5s ease;
+}
+
+.team-avatar-placeholder {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: var(--accent-color);
+    background: var(--text-light-lm);
+}
+
+.team-card-placeholder:hover {
+    opacity: 0.7;
+}
+
+body.dark-mode .team-avatar-placeholder {
+    background: var(--background-dark-secondary-dm);
+}
+
+.team-button-wrapper {
+    animation: breathe 4s ease-in-out infinite;
+    display: inline-block;
+}
+
+.team-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode .team-avatar {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.team-name {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.team-role {
+    color: var(--tertiary-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.team-bio {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+
+/* ============================================
+    RESEARCH SECTION
+    ============================================ */
+.research-section {
+    background-color: var(--section-background);
+    justify-content: center;
+}
+
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.research-card {
+    padding: 40px 30px;
+    background: var(--background-light);
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease;
+}
+
+.research-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .research-card:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.research-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.research-title {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.research-description {
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+
+
+/* ============================================
+    CONTACT SECTION
+    ============================================ */
+.contact-section {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-color) 100%);
+    color: white;
+}
+
+.contact-section .section-title {
+    color: white;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 60px;
+    align-items: start;
+}
+
+.contact-social {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: white;
+    opacity: 0.6;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-link:hover {
+    transform: scale(1.08);
+    opacity: 1;
+}
+
+.social-icon {
+    font-size: 6rem;
+    color: white;
+    padding: 20px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-link:hover .social-icon {
+    transform: scale(1.08);
+    opacity: 1;
+}
+
+.social-label {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* ============================================
+    FOOTER
+    ============================================ */
+.footer {
+    /* Footer remains a deep dark color in both modes for consistency and contrast */
+    background-color: var(--background-dark-dm);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+/* ============================================
+    ANIMATIONS
+    ============================================ */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+    RESPONSIVE DESIGN
+    ============================================ */
+@media (max-width: 768px) {
+    .nav-container {
+        height: 60px;
+    }
+    
+    .nav-logo {
+        font-size: 1.5rem;
+    }
+    
+    .nav-menu {
+        gap: 15px;
+    }
+    
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section {
+        padding: 80px 20px 40px;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+}

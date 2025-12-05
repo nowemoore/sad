@@ -92,9 +92,9 @@ function App() {
             <div className="hero-divider"></div>
             <p className="hero-subtitle">Studying the dynamics of human-AI decision-making to craft safeguards that keep AI-powered decision-making robust, human-centred, and reliable.</p>
             <div className="hero-breathing-wrapper">
-            <button className="cta-button" onClick={() => scrollToSection('contact')}>
-              Express Interest
-            </button>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSd_b6_Kbt2QjgZpxau81UzShz7MihYweYKaluur-x8ag-gIlg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" className="cta-button" style={{ display: 'inline-block', textDecoration: 'none' }}>
+                Express Interest
+              </a>
           </div>
         </div>
       </section>
@@ -221,12 +221,12 @@ function App() {
             </div>
             <div style={{ textAlign: 'center', marginTop: '60px' }}>
               <p className="section-text">
-                We're currently looking for both research and ops talent to join our team! Especially if you have backgrounf in <strong>AI Safety, evaluation science, HCI, Game Theory, Cognitive Science, AI Control</strong>, and related fields, we would love to hear from you.
+                We're currently looking for both research and ops talent to join our team! Especially if you have background in <strong>AI Safety, evaluation science, HCI, Game Theory, Cognitive Science, AI Control</strong>, and related fields, we would love to hear from you.
               </p>
               <div className="team-button-wrapper">
-                <button className="cta-button" onClick={() => scrollToSection('contact')}>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd_b6_Kbt2QjgZpxau81UzShz7MihYweYKaluur-x8ag-gIlg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" className="cta-button" style={{ display: 'inline-block', textDecoration: 'none' }}>
                   Express Interest
-                </button>
+                </a>
               </div>
             </div>
           </div>

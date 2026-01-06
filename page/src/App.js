@@ -90,7 +90,9 @@ function App() {
             <h1 className="hero-title">Secure AI-Powered Decision-Making</h1>
           </div>
             <div className="hero-divider"></div>
-            <p className="hero-subtitle">Studying the dynamics of human-AI decision-making to craft safeguards that keep AI-powered decision-making robust, human-centred, and reliable.</p>
+            <p className="hero-subtitle"><b>What kind of decision-makers are models? What kind of decision-makers do humans become in their wake?</b></p>
+            <p className="hero-subtitle"> At SAD Labs, we're studying the dynamics of human-AI decision-making to craft safeguards that keep AI-powered decision-making robust, human-centred, and reliable.</p>
+
             <div className="hero-breathing-wrapper">
               <a href="https://docs.google.com/forms/d/e/1FAIpQLSd_b6_Kbt2QjgZpxau81UzShz7MihYweYKaluur-x8ag-gIlg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" className="cta-button" style={{ display: 'inline-block', textDecoration: 'none' }}>
                 Express Interest
@@ -106,15 +108,38 @@ function App() {
           <div className="about-content">
 
           </div>
+          <div className='about-text-container'>
+            <h3>Did You Know That...</h3>
+            <div className="stats-grid">
+              <div className="stat-card">
+                <div className='stat-content'>
+                <div className="stat-number">66%</div>
+                <div className="stat-label">of workers who make decisions using AI don't check its accuracy</div>
+                </div>
+              </div>
+              <div className="stat-card">
+                <div className='stat-content'>
+                <div className="stat-number">56%</div>
+                <div className="stat-label">of workers who use AI make mistakes in their work because of it</div>
+                </div>
+              </div>
+              <div className="stat-card">
+                <div className='stat-content'>
+                <div className="stat-number">43%</div>
+                <div className="stat-label">is how much larger errors in estimates humans make when they rely on AI under time pressure</div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div className="about-image-text-section">
             <div className="about-image-container">
               <img src={illustration1} alt="Illustration 1" className="about-image" />
             </div>
             <div className="about-text-container">
-              <h3>Why We Do What We Do</h3>
+              <h4>Not All Decisions Are Born Equal</h4>
               <p>
-                All across the span of human history, societies have been built on the promise that greatness lies in every one of us having our own way to meaningfully contribute to our collective prosperity—all the way until now. As AI systems become more capable, humanity comes to face the so-far-unheard-of prospect that maybe none of us are all that necessary in keeping the System running, leading to <a href="https://arxiv.org/abs/2501.16946" target="_blank" rel="noopener noreferrer" className="inline-link">Gradual Disempowerment</a>.
+              Did you know that 66% of workers use AI without checking accuracy—and 56% have already made mistakes because of it? Now imagine that decision is a <span style={{ color: '#549981'}}>medical diagnosis.</span> <span style={{ color: '#2f755f'}}>A loan approval.</span> <span style={{ color: '#00523e'}}>A military call. </span>All these decisions have one thing in common: they rarely happen under the luxury of ideal conditions. At SAD Labs, we study what happens when humans and AI make decisions together when it matters most and how to keep those decisions safe.
               </p>
             </div>
           </div>
@@ -124,28 +149,25 @@ function App() {
               <img src={illustration2} alt="Illustration 2" className="about-image" />
             </div>
             <div className="about-text-container">
-              <h3>AI & Decision-Making</h3>
+              <h4>Measuring Control Before It's Gone</h4>
               <p>
-                The possibility of faster, higher returns forces humans to outsource decision-making to AI. AI can be implemented to directly make decisions (i.e. humans build agents that decide for us) or indirectly influence seemingly human choices (i.e. humans allow agents to steer our choices). At SAD Labs, we believe that as AI becomes more capable, humans must guarantee they hold real control over every decision, not just the impression of it. 
-              </p>
-              <p>
-                Now in order to protect the integrity of human choice, humans must retain <strong>oversight, agency</strong>, and <strong>impact</strong> over their decisions. This means that they must be able to critically evaluate choices presented by AI, have the competency to make their own choices, and be able to see their decisions meaningfully affect outcomes. So far, there is no metric for any of these critical components of human decision-making when working with AI.
+                We're facing a slow erosion of human agency&mdash;not necessarily through AI takeover, but through <span style={{ color: '#549981'}}>Gradual Disempowerment</span>: the quiet outsourcing of judgment until humans are left holding the wheel of a car they no longer know how to drive. As AI becomes more capable, humans are outsourcing more decisions&mdash;but there's no metric for whether humans still hold real control. We're building one.
               </p>
             </div>
           </div>
 
-          <div className="about-image-text-section">
+          {/* <div className="about-image-text-section">
             <div className="about-image-container">
               <img src={illustration3} alt="Illustration 3" className="about-image" />
             </div>
             <div className="about-text-container">
-              <h3>Not All Choices Are Born Equal</h3>
+              <h4>Not All Choices Are Born Equal</h4>
               <p>
                 Everything we do at SAD Labs is motivated by the understanding that the most critical decisions often happen in adversarial, judgment-impairing contexts. Human judgment is often impaired by conditions such as time pressure, information ambiguity, high stakes, and more. We ask how these conditions can help us understand inherited vulnenrabilities in model decision-making and failure modes of human-AI collaboration on interactive, decision-making tasks.
 
               </p>
             </div>
-          </div>
+          </div> */}
 
           <div className="about-content" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <div className='about-text-container'>
@@ -157,7 +179,7 @@ function App() {
                   <FontAwesomeIcon icon={faMicrochip} />
                 </div>
                 <div className="about-feature-text">
-                  <h4>Reliable Decision-Making by Models</h4>
+                  <h5>Evaluate the Reliability of Models' Decision-Making</h5>
                   <p>Exposing models to judgment-impairing conditions to understand the robustness of their decision-making standards.</p>
                 </div>
               </div>
@@ -166,7 +188,7 @@ function App() {
                   <FontAwesomeIcon icon={faHandshake} />
                 </div>
                 <div className="about-feature-text">
-                  <h4>Robust Human-AI Collaboration</h4>
+                  <h5>Understand the Robustness of Human-AI Collaboration</h5>
                   <p>Understanding human-AI cooperation failures on decision-making tasks under judgment-impairing conditions.</p>
                 </div>
               </div>
@@ -175,25 +197,10 @@ function App() {
                   <FontAwesomeIcon icon={faShieldAlt} />
                 </div>
                 <div className="about-feature-text">
-                  <h4>Targeted Safeguards</h4>
+                  <h5>Develop Targeted Safeguards</h5>
                   <p>Propose safeguards that appropriately address both model and HCI failure modes on critical decision-making.</p>
                 </div>
               </div>
-            </div>
-          </div>
-          
-          <div className="stats-grid">
-            <div className="stat-card">
-              <div className="stat-number">3</div>
-              <div className="stat-label">Research Areas</div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-number">3+</div>
-              <div className="stat-label">Years of Research Experience</div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-number">100%</div>
-              <div className="stat-label">Committed to Open Source</div>
             </div>
           </div>
         </div>
@@ -236,10 +243,22 @@ function App() {
       <section id="research" className="section research-section">
         <div className="section-container">
           <h2 className="section-title">Our Research</h2>
-            <p className="section-text">
-                We're working to get our research output to you as soon as possible!
-            </p>
-          
+          <p className="section-text">
+            We're working to get our research output to you as soon as possible! You're welcome to browse our Question Bank, where we've compiled the key questions driving our research. It's a living document, and we'd love to hear what you think is missing.
+          </p>
+          <div style={{ textAlign: 'center', marginTop: '40px' }}>
+            <div className="hero-breathing-wrapper" style={{ display: 'inline-block' }}>
+              <a 
+                href="https://docs.google.com/spreadsheets/d/1wTfQIJ1-oXM_OCHj2zrOCIXYehPZNHWIt-xvJza0D9o/edit?usp=sharing" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="cta-button" 
+                style={{ display: 'inline-block', textDecoration: 'none' }}
+              >
+                Question Bank
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -249,17 +268,11 @@ function App() {
         <div className="section-container">
           <h2 className="section-title">Contact Us</h2>
           <p className="section-text" style={{color: 'white'}}>
-            If you have questions about our work, would like to collaborate, or want to make a helpful suggestion, please reach out to Nikola via any of the channels below.
+            If you have questions about our work, would like to collaborate, or want to make a helpful suggestion, please reach out to us using the form linked below!
           </p>
           
           <div className="contact-social">     
-            <a href="https://www.linkedin.com/in/nowemoore/" target="_blank" rel="noopener noreferrer" className="social-link">
-              <div className="social-icon">
-                <FontAwesomeIcon icon={faLinkedin} />
-              </div>
-            </a>
-            
-            <a href="mailto:ndatkova@sas.upenn.edu" className="social-link">
+            <a href="https://forms.gle/AJGVB791Qw48QAWdA" target="_blank" rel="noopener noreferrer" className="social-link">
               <div className="social-icon">
                 <FontAwesomeIcon icon={faEnvelope} />
               </div>

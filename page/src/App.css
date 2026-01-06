@@ -123,6 +123,8 @@ body.dark-mode {
     }
 }
 
+
+
 /* ============================================
     NAVIGATION BAR (FIXED STYLES)
     ============================================ */
@@ -459,11 +461,25 @@ body.dark-mode .cta-button {
 
 .stat-card {
     text-align: center;
-    padding: 30px;
-    /* Gradient remains the same as it's a feature, not a theme-toggle */
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    padding: 40px 20px;
+    min-height: 300px;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: 
+        radial-gradient(
+            circle at center, 
+            var(--card-glow-color, rgba(0, 150, 150, 0.4)) 0%,   
+            var(--card-glow-color, rgba(0, 150, 150, 0.1)) 40%,    
+            transparent 60%
+        ),
+        transparent;        
     border-radius: 15px;
     color: white;
+    overflow: hidden;
+}
+
+.stat-content {
     transition: transform 0.3s ease;
 }
 
@@ -490,6 +506,7 @@ body.dark-mode .cta-button {
     height: auto;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 50%;
 }
 
 body.dark-mode .about-image {
@@ -503,6 +520,14 @@ body.dark-mode .about-image {
 
 .about-text-container h3 {
     font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-text-container h4 {
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--text-dark);
     margin-bottom: 20px;
@@ -526,17 +551,20 @@ body.dark-mode .about-image {
     }
 }
 
-.stat-card:hover {
-    transform: translateY(-10px);
-}
-
 .stat-number {
+    color: var(--text-light);
     font-size: 3rem;
     font-weight: 800;
     margin-bottom: 10px;
 }
 
+.stat-content:hover {
+    transform: scale(1.02);
+    animation: hover-breathe 4s ease-in-out 0.4s infinite;
+}
+
 .stat-label {
+    color: var(--text-light);
     font-size: 1.1rem;
     opacity: 0.9;
 }
@@ -564,9 +592,8 @@ body.dark-mode .about-image {
     text-align: left;
 }
 
-.about-feature-text h4 {
+.about-feature-text h5 {
     font-size: 1.2rem;
-    /* Use dynamic dark text color */
     color: var(--text-dark);
     margin-bottom: 8px;
     font-weight: 700;

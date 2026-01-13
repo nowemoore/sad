@@ -7,7 +7,7 @@ import illustration2 from './assets/illustrative-picture-2.jpg';
 import illustration3 from './assets/illustrative-picture-3.jpg';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {   faListCheck, faGauge, faShieldAlt, faUserClock, faWaveSquare, faTableCells, faArrowRightFromBracket , faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import {   faListCheck, faGauge, faShieldAlt, faUserClock, faWaveSquare, faGripLines, faTableCells, faArrowRightFromBracket , faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 function App() {
@@ -259,6 +259,14 @@ useEffect(() => {
                       <h5>We Design for Imperfection</h5>
                       <p>We understand that not all decisions are born equal. We study decisions made under <span style={{ color: '#2f755f'}}>judgment impairing conditions</span> to account for it.</p>
                   </div>
+
+                  <div className="approach-item from-bottom">
+                      <div className="approach-icon">
+                          <FontAwesomeIcon icon={faGripLines  } />
+                      </div>
+                      <h5>We Draw the Line</h5>
+                      <p>We seek the boundary between <span style={{ color: '#2f755f'}}>helpful augmentation</span> and <span style={{ color: '#2f755f'}}>displacement of choice</span> and use it to inform our metrics.</p>
+                  </div>
                   
                   <div className="approach-item from-bottom">
                       <div className="approach-icon">
@@ -268,13 +276,13 @@ useEffect(() => {
                       <p>We identify which types of tasks invite failures in human-AI problem-solving collaboration, so safeguards can be targeted, not blanket.</p>
                   </div>
                   
-                  <div className="approach-item from-right">
+                  {/* <div className="approach-item from-right">
                       <div className="approach-icon">
                           <FontAwesomeIcon icon={faArrowRightFromBracket} />
                       </div>
                       <h5>Our Work Does Not Stay Inside the Lab</h5>
                       <p>Asking hard questions matters. Making the answers useful for everyone matters even more. We design <span style={{ color: '#2f755f'}}>practical tools</span> to protect your agency in the wild.</p>
-                  </div>
+                  </div> */}
               </div>
             </div>
           </div>

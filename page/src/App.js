@@ -157,7 +157,7 @@ useEffect(() => {
           </div>
 
           <div className="about-content" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}><div className='about-text-container'>
-              <h3>Our Priorities</h3>
+              <h3>Our Top Priorities</h3>
               
                <div className="approach-grid">
                   <div className="approach-item from-left">

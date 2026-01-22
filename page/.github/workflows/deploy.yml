@@ -1,4 +1,4 @@
-name: Deploy Next.js (static) to GitHub Pages
+name: Next Export Deploy (sad-labs-next)
 
 on:
   push:

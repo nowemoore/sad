@@ -273,7 +273,7 @@ useEffect(() => {
                           <FontAwesomeIcon icon={faTableCells } />
                       </div>
                       <h5>We Define Risk by Features, Not Examples</h5>
-                      <p>We identify which types of tasks invite failures in human-AI problem-solving collaboration, so safeguards can be targeted, not blanket.</p>
+                      <p>We identify which types of tasks invite failures in human-AI problem-solving collaboration, so safeguards can be <span style={{ color: '#2f755f'}}>targeted, not blanket</span>.</p>
                   </div>
                   
                   {/* <div className="approach-item from-right">

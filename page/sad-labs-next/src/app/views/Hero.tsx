@@ -23,7 +23,7 @@ export default function Hero() {
             className={`${styles.heroTitle} staggerItem`}
             style={{
               animationDelay: "75ms",
-              marginLeft: "3.5rem",
+              ["--offset" as any]: "3.5rem",
               color: "var(--accent-sage)",
             }}
           >
@@ -34,7 +34,7 @@ export default function Hero() {
             className={`${styles.heroTitle} staggerItem`}
             style={{
               animationDelay: "75ms",
-              marginLeft: "7rem",
+              ["--offset" as any]: "7rem",
               color: "var(--accent-forest)",
             }}
           >

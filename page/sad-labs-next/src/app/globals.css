@@ -79,6 +79,78 @@ body.light-mode {
   --surface-overlay: #fcfbf8;   
 }
 
+/* backgrounds */
+:root {
+  /* tonal steps (very small deltas) */
+  --tone-0: #141414;
+  --tone-1: #161616; /* your current surface-root */
+  --tone-2: #181818;
+  --tone-3: #1a1a1a;
+}
+
+.sectionSurface {
+  position: relative;
+  background: var(--tone-1);
+  overflow: hidden;
+}
+
+/* soft light falloff, no color */
+.sectionSurface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.03),
+      rgba(0,0,0,0.06)
+    );
+}
+
+.sectionSurface > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* slightly lighter */
+.surface-a {
+  background: var(--tone-2);
+}
+
+/* slightly darker */
+.surface-b {
+  background: var(--tone-0);
+}
+
+/* top-lit */
+.surface-top {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.04),
+      rgba(0,0,0,0.08)
+    ),
+    var(--tone-1);
+}
+
+/* bottom-lit */
+.surface-bottom {
+  background:
+    linear-gradient(
+      0deg,
+      rgba(255,255,255,0.04),
+      rgba(0,0,0,0.08)
+    ),
+    var(--tone-1);
+}
+
+/* flat reset */
+.surface-flat {
+  background: var(--tone-1);
+}
+
 /* section styles */
 .section {
   min-height: 100vh;
@@ -166,7 +238,7 @@ body.light-mode {
   }
 }
 
-/* reduced motion for phones */
+/* PHONES */
 @media (prefers-reduced-motion: reduce) {
   .staggerItem {
     opacity: 1;
@@ -175,4 +247,22 @@ body.light-mode {
   }
 }
 
+@media (max-width: 640px) {
 
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .section-text {
+    text-align: center;
+    max-width: 100%;
+    font-size: 1.1rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+
+
+}

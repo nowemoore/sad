@@ -5,7 +5,7 @@ import { faHatCowboy, faHourglass, faSignsPost, faLightbulb } from "@fortawesome
 
 export default function Problem() {
   return (
-    <section id="problem" className="section problem-section">
+    <section id="problem" className="section problem-section surface-top">
       <div className="section-container">
         <h1 className="section-title from-bottom">About the Problem</h1>
         <div className={styles.horizontalGrid} style={{ gridTemplateColumns: "2fr 2fr" }}>

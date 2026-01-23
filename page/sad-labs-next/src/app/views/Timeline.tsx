@@ -75,7 +75,7 @@ export default function Timeline() {
   ];
 
   return (
-    <section id="timeline" className="section timeline-section">
+    <section id="timeline" className="section timeline-section surface-a">
       <div className="section-container">
         <h2 className="section-title from-bottom">Timeline</h2>
 

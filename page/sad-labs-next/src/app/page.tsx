@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 import Hero from "./views/Hero";
 import Objective from "./views/Objective";
@@ -11,7 +12,7 @@ import Problem from "./views/Problem";
 import Timeline from "./views/Timeline";
 import TakeAction from "./views/TakeAction";
 
-export default function HomePage() {
+export default function Page() {
   // IntersectionObserver for animation classes
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -61,9 +62,7 @@ export default function HomePage() {
       <Timeline />
       <TakeAction />
 
-      <footer className="footer">
-        <p>&copy; 2025 SAD Labs. All rights reserved. Based out of London, UK.</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

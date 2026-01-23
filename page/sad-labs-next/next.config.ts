@@ -8,6 +8,9 @@ const nextConfig = {
   images: { unoptimized: true },
   basePath: "/sad",
   assetPrefix: "/sad/",
+  devIndicators: {
+    buildActivity: false,
+  },
 };
 
 export default nextConfig;

@@ -142,7 +142,6 @@
 }
 
 .card:hover {
-  animation: scale-breathe 7s ease-in-out infinite;
 
   border-color: rgba(199, 32, 188, 0.15);
 

@@ -326,8 +326,6 @@
   backdrop-filter: blur(18px) saturate(120%);
   -webkit-backdrop-filter: blur(18px) saturate(120%);
 
-  box-shadow: -20px 0 60px rgba(0, 0, 0, 0.45);
-
   padding: 1.25rem 1.25rem 1.5rem;
   display: flex;
   flex-direction: column;

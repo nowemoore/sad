@@ -22,7 +22,7 @@ export default function Hero() {
           <h1
             className={`${styles.heroTitle} staggerItem`}
             style={{
-              animationDelay: "75ms",
+              animationDelay: "150ms",
               ["--offset" as any]: "3.5rem",
               color: "var(--accent-sage)",
             }}
@@ -33,7 +33,7 @@ export default function Hero() {
           <h1
             className={`${styles.heroTitle} staggerItem`}
             style={{
-              animationDelay: "75ms",
+              animationDelay: "225ms",
               ["--offset" as any]: "7rem",
               color: "var(--accent-forest)",
             }}
@@ -44,22 +44,18 @@ export default function Hero() {
 
         <div
           className={`${styles.heroDivider} staggerItem`}
-          style={{ animationDelay: "150ms" }}
+          style={{ animationDelay: "300ms" }}
         />
 
         <span
           className={`${styles.heroSubtitle} staggerItem`}
-          style={{ animationDelay: "225ms" }}
+          style={{ animationDelay: "375ms" }}
         >
           AI makes decisions{" "}
-          <span style={{ color: "var(--accent-magenta)" }}>
-            faster
-          </span>
-          . SAD Labs are here to help{" "}
-          <span style={{ color: "var(--accent-magenta)" }}>
-            you
-          </span>{" "}
-          keep pace without losing your seat at the table.
+          <span style={{ color: "var(--accent-magenta)" }}>faster</span>. SAD Labs
+          are here to help{" "}
+          <span style={{ color: "var(--accent-magenta)" }}>you</span> keep pace
+          without losing your seat at the table.
         </span>
       </div>
     </section>

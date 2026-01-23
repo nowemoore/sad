@@ -12,7 +12,7 @@ export default function Problem() {
           <div className={styles.verticalGrid} style={{ gridTemplateRows: "auto 10fr auto 10fr" }}>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <h2 className={styles.cardTitle} style={{marginBottom: '0.75rem'}}><div className={styles.titleIcon} style={{color: "var(--text-primary)"}}><FontAwesomeIcon icon={faHatCowboy}/></div>Decision-Making Norms are Shifting</h2>
-              <p><span style={{ color: "var(--accent-magenta)" }}>Ever caught yourself asking AI for recommendations on decisions you used to make on your own?</span> You're not alone. Human societies outsource judgment calls to AI at an unprecedetned pace. Continuing in this direction without rigorous, actionable monitoring of AI-assisted decision-making risks catastrophic outcomes.</p>
+              <p><span style={{ color: "var(--accent-magenta)" }}>Ever caught yourself asking AI for recommendations on decisions you used to make on your own?</span> You're not alone. Human societies outsource judgment calls to AI at an unprecedented pace. Continuing in this direction without rigorous, actionable monitoring of AI-assisted decision-making risks catastrophic outcomes.</p>
             </div>
 
             <span></span>

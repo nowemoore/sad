@@ -4,14 +4,17 @@ import { useState, useEffect } from "react";
 import styles from "./components.module.css";
 
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCompass,
   faBullseye,
   faMagnifyingGlass,
   faRoadBarrier,
   faClock,
-  faRocket} from '@fortawesome/free-solid-svg-icons';
+  faRocket,
+  faBars,
+  faXmark,
+} from "@fortawesome/free-solid-svg-icons";
 
 interface NavItem {
   label: string;
@@ -29,6 +32,7 @@ const navItems: NavItem[] = [
 
 export default function Navbar() {
   const [darkMode, setDarkMode] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     if (darkMode) {
@@ -40,12 +44,32 @@ export default function Navbar() {
     }
   }, [darkMode]);
 
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+  // lock scroll when menu is open (mobile)
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
+  // close on Escape
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
+  const scrollToSection = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    sectionHref: string
+  ) => {
     e.preventDefault();
-    const element = document.getElementById(sectionId.replace("#", ""));
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    const id = sectionHref.replace("#", "");
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+    setMenuOpen(false);
   };
 
   return (
@@ -56,15 +80,14 @@ export default function Navbar() {
           className={styles.navLogo}
           onClick={(e) => scrollToSection(e, "#hero")}
         >
-          SAD 
-          <span style={{ 
-            filter: "drop-shadow(0 0 5px var(--accent-magenta))", 
-          }}>
+          SAD
+          <span style={{ filter: "drop-shadow(0 0 5px var(--accent-magenta))" }}>
             <FontAwesomeIcon icon={faCompass} />
           </span>
           Labs
         </a>
 
+        {/* Desktop menu */}
         <ul className={styles.navMenu}>
           {navItems.map((item) => (
             <li key={item.href} className={styles.navItem}>
@@ -73,17 +96,14 @@ export default function Navbar() {
                 className={styles.navLink}
                 onClick={(e) => scrollToSection(e, item.href)}
               >
-                <FontAwesomeIcon
-                  icon={item.icon}
-                  className={styles.navIcon}
-                  aria-hidden="true"
-                />
+                <FontAwesomeIcon icon={item.icon} className={styles.navIcon} />
                 {item.label}
               </a>
             </li>
           ))}
         </ul>
 
+        {/* Desktop toggle (hidden on mobile via CSS) */}
         <div
           className={styles.themeToggle}
           onClick={() => setDarkMode(!darkMode)}
@@ -91,17 +111,67 @@ export default function Navbar() {
           role="button"
           tabIndex={0}
           onKeyDown={(e) => {
-            if (e.key === "Enter" || e.key === " ") {
-              setDarkMode(!darkMode);
-            }
+            if (e.key === "Enter" || e.key === " ") setDarkMode(!darkMode);
           }}
         >
           <div className={`${styles.toggleTrack} ${darkMode ? styles.dark : styles.light}`}>
-            <div className={styles.toggleSlider}>
-              {darkMode ? "月" : "日"}
+            <div className={styles.toggleSlider}>{darkMode ? "月" : "日"}</div>
+          </div>
+        </div>
+
+        {/* Mobile hamburger */}
+        <button
+          type="button"
+          className={styles.hamburger}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((v) => !v)}
+        >
+          <FontAwesomeIcon icon={menuOpen ? faXmark : faBars} />
+        </button>
+      </div>
+
+      {/* Mobile overlay + panel */}
+      <div
+        className={`${styles.mobileOverlay} ${menuOpen ? styles.open : ""}`}
+        onClick={() => setMenuOpen(false)}
+      />
+
+      <div className={`${styles.mobilePanel} ${menuOpen ? styles.open : ""}`}>
+        <div className={styles.mobileHeader}>
+          <span className={styles.mobileTitle}>Menu</span>
+
+          {/* Move theme toggle into panel on mobile */}
+          <div
+            className={styles.mobileToggle}
+            onClick={() => setDarkMode(!darkMode)}
+            aria-label="Toggle dark mode"
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") setDarkMode(!darkMode);
+            }}
+          >
+            <div className={`${styles.toggleTrack} ${darkMode ? styles.dark : styles.light}`}>
+              <div className={styles.toggleSlider}>{darkMode ? "月" : "日"}</div>
             </div>
           </div>
         </div>
+
+        <ul className={styles.mobileMenu}>
+          {navItems.map((item) => (
+            <li key={item.href}>
+              <a
+                href={item.href}
+                className={styles.mobileLink}
+                onClick={(e) => scrollToSection(e, item.href)}
+              >
+                <FontAwesomeIcon icon={item.icon} className={styles.mobileIcon} />
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </nav>
   );

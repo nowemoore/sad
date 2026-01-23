@@ -35,7 +35,7 @@ export default function TakeAction() {
               <div className={styles.actionIcon}>
                 <FontAwesomeIcon icon={faComments} />
               </div>
-              <h2 className={styles.actionTitle}>Guide SAD Agenda</h2>
+              <h2 className={styles.actionTitle}>Guide the Agenda</h2>
               <p className={styles.actionText}>Help ground our work by sharing how AI supports—or undermines—decisions in your field.</p>
 
               <div className={styles.centerBtn}>

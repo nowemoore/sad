@@ -80,6 +80,7 @@ export default function Timeline() {
         <h2 className="section-title from-bottom">Timeline</h2>
 
         <div className={styles.timeline}>
+          <div className={styles.line} />
           {events.map((event) => (
             <div key={event.id} className={styles.item}>
               <div className={styles.contentTop}>
@@ -106,7 +107,6 @@ export default function Timeline() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

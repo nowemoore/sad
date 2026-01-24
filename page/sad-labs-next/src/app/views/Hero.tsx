@@ -51,10 +51,8 @@ export default function Hero() {
           className={`${styles.heroSubtitle} staggerItem`}
           style={{ animationDelay: "375ms" }}
         >
-          AI makes decisions{" "}
-          <span style={{ color: "var(--accent-magenta)" }}>faster</span>. SAD Labs
-          are here to help{" "}
-          <span style={{ color: "var(--accent-magenta)" }}>humans</span> keep their seat at the table.
+          AI makes decisions faster. SAD Labs
+          are here to help humans make sure that <span style={{color: "var(--accent-magenta)"}}>efficiency</span> doesn't cost them <span style={{color: "var(--accent-magenta)"}}>control</span>.
         </span>
       </div>
     </section>

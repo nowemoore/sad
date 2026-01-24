@@ -29,7 +29,7 @@ export default function Objective() {
           <span style={{ color: "var(--accent-sage)" }}>
             at scale
           </span>
-          . The responsible way forward starts with deploying tools that bring <span style={{color: "var(--accent-magenta-soft)"}}>real-time visibility into AI influence</span>, so humanity retains the ability to course-correct before overreliance sets in.
+          . The responsible way forward starts with <span style={{color: "var(--accent-magenta-soft)"}}>real-time visibility into AI influence</span>, so humanity retains the ability to course-correct before overreliance sets in. SAD builds such future by:
         </p>
 
         {/* objective list */}
@@ -53,7 +53,7 @@ export default function Objective() {
                 <span className={styles.titleIcon}>
                   <FontAwesomeIcon icon={faBarsProgress} />
                 </span>
-                Develop Robust Monitoring Tools
+                Developing Monitoring Tools
               </h2>
 
               <p className={styles.cardText}>
@@ -63,7 +63,7 @@ export default function Objective() {
                 <span style={{ color: "var(--accent-magenta-soft)" }}>
                   before
                 </span>{" "}
-                it scales. SAD Labs&apos; aim is to develop metrics to bring such
+                it scales. SAD research develops metrics to bring such
                 tools to life and help organisations verify that their use of AI
                 remains for the better.
               </p>
@@ -89,7 +89,7 @@ export default function Objective() {
                 <span className={styles.titleIcon}>
                   <FontAwesomeIcon icon={faSeedling} />
                 </span>
-                Contribute to Research
+                Contributing to Research
               </h2>
 
               <p className={styles.cardText}>

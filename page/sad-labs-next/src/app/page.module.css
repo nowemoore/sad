@@ -37,13 +37,7 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background:
-  radial-gradient(
-    1200px 600px at 50% 40%,
-    #1c1c1c 0%,
-    #141414 60%,
-    #101010 100%
-  );
+  background: var(--hero-gradient);
 }
 
 .heroContent {

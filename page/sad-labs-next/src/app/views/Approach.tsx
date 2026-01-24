@@ -27,7 +27,7 @@ export default function Approach() {
               <FontAwesomeIcon icon={faCircleRadiation} />
             </div>
             <h2 className={styles.approachTitle}>Prioritising Critical Contexts</h2>
-            <p className={styles.approachText}>The most important decisions rarely happen under ideal conditions. Focusing on decisions made under judgment-impairing conditions (time pressure, ambiguity, or rising risks, and more) can <span style={{ color: "var(--accent-magenta-soft)" }}>reveal important pain points quicker</span>.</p>
+            <p className={styles.approachText}>The most important decisions rarely happen under ideal conditions. Focusing on decisions made under judgment-impairing conditions (time pressure, ambiguity, or rising risks, and more) can <span style={{ color: "var(--accent-magenta-soft)" }}>reveal important pain points more quickly</span>.</p>
           </div>
         </div>     
       </div>

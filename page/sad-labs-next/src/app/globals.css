@@ -71,6 +71,13 @@ p {
   --surface-elevated: #1f1f1f;
   --surface-overlay: #262626;
 
+  --hero-gradient: radial-gradient(
+    1200px 600px at 50% 40%,
+    #1c1c1c 0%,
+    #141414 60%,
+    #101010 100%
+  );
+
   /* Accents */
   --accent-magenta: #bd48b6;
   --accent-magenta-soft: #ff9dff;
@@ -108,6 +115,14 @@ body.light-mode {
   --surface-root: #f1f2ee;
   --surface-elevated: #f7f8f4;
   --surface-overlay: #fcfbf8;
+
+  --hero-gradient: radial-gradient(
+    1200px 600px at 50% 40%,
+    #ffffff 0%,
+    #f6f7f2 60%,
+    #eef0ea 100%
+  );
+  
 
   /* =========================
      Background tones (LIGHT MODE)

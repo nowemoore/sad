@@ -37,7 +37,7 @@ export default function Problem() {
 
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <h2 className={styles.cardTitle} style={{marginBottom: '0.75rem'}}><div className={styles.titleIcon} style={{color: "var(--text-primary)"}}><FontAwesomeIcon icon={faLightbulb}/></div>Missing Metrics</h2>
-              <p>In 2026, we continue being unable to put early warnings and safeguards in place because there are no robust metrics for overreliance. This makes sense&mdash;it's a complex problem. Nonetheless, humanity needs metrics to manage the risks of AI-assisted decisions. <span style={{ color: "var(--accent-magenta-soft)" }}>For that reasons SAD Labs are up for the challenge.</span></p>
+              <p>In 2026, we continue being unable to put early warnings and safeguards in place because there are no robust metrics for overreliance. This makes sense&mdash;it's a complex problem. Nonetheless, humanity needs metrics to manage the risks of AI-assisted decisions. <span style={{ color: "var(--accent-magenta-soft)" }}>For that reason, SAD Labs are up for the challenge.</span></p>
             </div>
           </div>
         </div>

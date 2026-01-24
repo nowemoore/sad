@@ -29,7 +29,7 @@ export default function Objective() {
           <span style={{ color: "var(--accent-sage)" }}>
             at scale
           </span>
-          . The responsible way forward starts with <span style={{color: "var(--accent-magenta-soft)"}}>real-time visibility into AI influence</span>, so humanity retains the ability to course-correct before overreliance sets in. SAD builds such future by:
+          . The responsible way forward starts with <span style={{color: "var(--accent-magenta-soft)"}}>real-time visibility into AI influence</span>, so humanity retains the ability to course-correct before overreliance sets in. Let's build such future by:
         </p>
 
         {/* objective list */}

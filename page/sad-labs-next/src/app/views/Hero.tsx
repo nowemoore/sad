@@ -54,8 +54,7 @@ export default function Hero() {
           AI makes decisions{" "}
           <span style={{ color: "var(--accent-magenta)" }}>faster</span>. SAD Labs
           are here to help{" "}
-          <span style={{ color: "var(--accent-magenta)" }}>you</span> keep pace
-          without losing your seat at the table.
+          <span style={{ color: "var(--accent-magenta)" }}>humans</span> keep their seat at the table.
         </span>
       </div>
     </section>

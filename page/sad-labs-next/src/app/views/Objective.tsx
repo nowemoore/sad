@@ -21,12 +21,15 @@ export default function Objective() {
           className="section-text from-bottom staggerItem"
           style={{ animationDelay: "75ms" }}
         >
-          SAD Labs was established to protect the{" "}
+          AI is shaping decisions across society {" "}
           <span style={{ color: "var(--accent-sage)" }}>
-            future of human choice
+            quietly
           </span>
-          . The plan to mitigate ambiguity in AI&apos;s influence on human agency
-          in decision-making is to:
+          {" "} and {" "}
+          <span style={{ color: "var(--accent-sage)" }}>
+            at scale
+          </span>
+          . The responsible way forward starts with deploying tools that bring <span style={{color: "var(--accent-magenta-soft)"}}>real-time visibility into AI influence</span>, so humanity retains the ability to course-correct before overreliance sets in.
         </p>
 
         {/* objective list */}

@@ -9,7 +9,7 @@ export default function Approach() {
       <div className="section-container">
         <h1 className="section-title from-bottom">In Search of the Solution</h1>
         <p className="section-text from-bottom">
-          Identifying metrics for gradual disempowerment depends on distinguishing helpful AI-augmented decision-making from harmful displacement of choice. <span style={{ color: "var(--accent-sage)" }}>SAD Labs proposes two principles for an effective investigative model:</span>
+          Identifying metrics for gradual disempowerment depends on distinguishing helpful AI-augmented decision-making from harmful displacement of choice. <span style={{ color: "var(--accent-sage)" }}>SAD Labs proposes two methods for an effective investigative model:</span>
         </p>
         <div className={styles.horizontalGrid} style={{ gridTemplateColumns: '1fr 1fr' }}>
           <div className={styles.approachItem}>

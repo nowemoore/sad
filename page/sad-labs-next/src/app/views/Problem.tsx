@@ -41,17 +41,6 @@ export default function Problem() {
             </div>
           </div>
         </div>
-
-        
-
-        {/* <div className={styles.horizontalGrid} style={{ gridTemplateColumns: "1fr 1fr" }}>
-    
-
-            <p className={`${styles.problemBody} from-bottom`}>
-              
-            </p>
-          </div>
-        </div> */}
       </div>
     </section>
   );

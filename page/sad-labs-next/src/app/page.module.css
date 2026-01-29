@@ -25,9 +25,8 @@
 }
 
 .centerBtn {
-  display: flex;
   justify-content: center;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 /* HERO */
@@ -75,7 +74,6 @@
   opacity: 0.85;
   font-weight: 300;
   max-width: 70rem;
-  line-height: 1.5rem;
   color: var(--text-secondary);
 }
 
@@ -156,15 +154,12 @@
 
   font-size: 1.1rem;
   font-weight: 700;
-  line-height: 1.2;
-
   color: var(--text-primary);
 }
 
 .cardText {
   font-size: 0.95rem;
   font-weight: 300;
-  line-height: 1.6;
   color: var(--text-secondary);
   max-width: 52ch;
 }
@@ -215,8 +210,6 @@
 
 .approachText {
   font-size: clamp(0.95rem, 1.6vw, 1.05rem);
-  line-height: 1.4;
-
   color: var(--text-secondary);
   max-width: 22rem;
 }
@@ -318,7 +311,6 @@
 .title {
   font-size: clamp(1rem, 1.8vw, 1.1rem);
   font-weight: 700;
-  line-height: 1.2;
   color: var(--text-primary, #ffffff);
   margin: 0;
 }
@@ -326,7 +318,6 @@
 .description {
   font-size: clamp(0.85rem, 1.4vw, 0.9rem);
   font-weight: 300;
-  line-height: 1.5;
   color: var(--text-secondary, rgba(255, 255, 255, 0.7));
   margin: 0;
 }
@@ -376,8 +367,6 @@
 
 .approachText {
   font-size: clamp(0.85rem, 1.2vw, 1rem);
-  line-height: 1.4;
-
   color: var(--text-secondary);
   max-width: 22rem;
 } 
@@ -521,7 +510,6 @@
 
   .description {
     font-size: 0.875rem;
-    line-height: 1.4;
   }
 
   .item:first-child .dot::before {

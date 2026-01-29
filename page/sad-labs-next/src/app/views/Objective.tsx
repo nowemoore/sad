@@ -1,7 +1,9 @@
 import styles from "../page.module.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBarsProgress, faSeedling } from "@fortawesome/free-solid-svg-icons";
+import { faBarsProgress, faSeedling, faChevronCircleRight } from "@fortawesome/free-solid-svg-icons";
+
+import ActionButton from "../components/ActionButton";
 
 export default function Objective() {
   return (
@@ -67,6 +69,14 @@ export default function Objective() {
                 tools to life and help organisations verify that their use of AI
                 remains for the better.
               </p>
+
+              <ActionButton href="/external/demo">
+              Show me Mock
+                <span className={styles.titleIcon} style={{color: 'var(--accent-magenta-soft)'}}>
+                  <FontAwesomeIcon icon={faChevronCircleRight} />
+                </span> 
+              </ActionButton>
+              
             </div>
 
             {/* spacer */}
@@ -102,6 +112,13 @@ export default function Objective() {
                 </span>{" "}
                 in AI-assisted decisions.
               </p>
+
+              <ActionButton href="/external/agenda">
+              Show me Roadmap
+                <span className={styles.titleIcon} style={{color: 'var(--accent-magenta-soft)'}}>
+                  <FontAwesomeIcon icon={faChevronCircleRight} />
+                </span> 
+              </ActionButton>
             </div>
           </div>
         </div>

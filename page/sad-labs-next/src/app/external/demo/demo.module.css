@@ -1,0 +1,178 @@
+/* ========================
+   DEMO DASHBOARD LAYOUT
+   ======================== */
+
+/* layout aids */
+.horizontalGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.verticalGrid {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  gap: 2rem;
+}
+
+.centerBtn {
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.demoSection {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: none;
+}
+
+.demoSection::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    /* highlights */
+    radial-gradient(circle at 20% 30%, rgba(193, 252, 245, 0.22) 0%, rgba(193, 252, 245, 0.10) 6%, transparent 12%),
+    radial-gradient(circle at 10% 72%, rgba(0, 201, 185, 0.20) 0%, rgba(0, 201, 185, 0.10) 8%, transparent 16%),
+    radial-gradient(circle at 18% 12%, rgba(73, 129, 123, 0.14) 0%, rgba(73, 129, 123, 0.07) 10%, transparent 22%),
+    radial-gradient(circle at 44% 78%, rgba(73, 129, 123, 0.10) 12%, transparent 30%),
+    radial-gradient(circle at 78% 64%, rgba(193, 252, 245, 0.10) 0%, rgba(193, 252, 245, 0.05) 6%, transparent 12%),
+    radial-gradient(circle at 66% 44%, rgba(184, 96, 146, 0.22) 0%, rgba(184, 96, 146, 0.10) 6%, transparent 14%),
+    radial-gradient(circle at 86% 18%, rgba(0, 201, 185, 0.08) 0%, rgba(0, 201, 185, 0.04) 7%, transparent 13%),
+    radial-gradient(circle at 58% 40%, rgba(124, 11, 76, 0.16) 0%, rgba(124, 11, 76, 0.07) 10%, transparent 22%),
+    radial-gradient(circle at 74% 64%, rgba(124, 11, 76, 0.14) 0%, rgba(124, 11, 76, 0.06) 12%, transparent 24%),
+    radial-gradient(circle at 92% 40%, rgba(124, 11, 76, 0.12) 0%, rgba(124, 11, 76, 0.05) 10%, transparent 20%),
+    radial-gradient(circle at 70% 82%, rgba(124, 11, 76, 0.08) 18%, transparent 42%),
+    radial-gradient(circle at 84% 72%, rgba(73, 129, 123, 0.07) 18%, transparent 40%),
+    linear-gradient(110deg, #093633 0%, #0d0107 100%);
+}
+
+/* Main content area */
+.main {
+  flex: 1;
+  padding: 1.5rem 2rem;
+  max-width: 80rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 2rem;
+  flex-shrink: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footerText {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--text-tertiary);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  padding: 1.75rem 1.75rem 1.9rem;
+  border-radius: 0.75rem;
+
+  /* TRUE glass surface */
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.03)
+  );
+
+  backdrop-filter: blur(14px) saturate(120%);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+
+  color: var(--text-primary);
+
+  /* glass edge */
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  /* subtle internal highlight */
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 8px 24px rgba(0, 0, 0, 0.35);
+
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  border-radius: inherit;
+
+  background: radial-gradient(
+    circle at 50% 40%,
+    rgba(199, 32, 188, 0.28),
+    transparent 65%
+  );
+
+  opacity: 0;
+  filter: blur(50px);
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.card:hover {
+
+  border-color: rgba(199, 32, 188, 0.15);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.card:hover::before {
+  opacity: 0.15;
+}
+
+
+.cardTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.cardText {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--text-secondary); 
+  max-width: 100%;
+}
+
+
+/* ========================
+   MOBILE
+   ======================== */
+
+@media (max-width: 640px) {
+  .main {
+    padding: 1rem;
+  }
+
+  .footer {
+    padding: 0.75rem 1rem;
+  }
+}

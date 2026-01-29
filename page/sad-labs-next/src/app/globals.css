@@ -33,8 +33,10 @@ span,
 a,
 button,
 input,
-textarea {
+textarea,
+text  {
   font-family: Outfit, sans-serif;
+  line-height: 1.4;
 }
 
 a {
@@ -46,7 +48,6 @@ a {
 p {
   font-size: 0.95rem;
   font-weight: 300;
-  line-height: 1.6;
   color: var(--text-secondary);
   max-width: 52ch;
 }
@@ -81,9 +82,10 @@ p {
   /* Accents */
   --accent-magenta: #bd48b6;
   --accent-magenta-soft: #ff9dff;
+  --accent-fire: rgb(184, 43, 97);
 
   --accent-forest: #03775a;
-  --accent-teal: #3b9b83;
+  --accent-teal: rgb(59, 155, 131);
   --accent-sage: #6dbaa1;
 
   --accent-ivory: #fff8f0;
@@ -236,7 +238,7 @@ body.light-mode {
 
 .section-text {
   font-size: clamp(1rem, 2vw, 1.2rem);
-  line-height: 1.5;
+  line-height: 1.4;
 
   color: var(--text-secondary);
 

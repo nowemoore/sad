@@ -409,8 +409,6 @@
 }
 
 /* table */
-/* ===== Computation Table (Skeleton) ===== */
-
 .compTable {
   width: 100%;
   border-collapse: collapse;
@@ -438,9 +436,8 @@
 /* Body cells */
 .compCell,
 .compResultCell {
-  padding: 0.9rem 0.5rem;
+  padding: 0.2rem;
   text-align: center;
-  vertical-align: middle;
 }
 
 /* Subtle emphasis for Result column */

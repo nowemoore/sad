@@ -12,12 +12,14 @@ import {
   faCircleChevronDown,
   faRoute,
   faLink,
-  faArrowAltCircleUp,
-  faCircleMinus
+  faCircleMinus,
+  faAngleDown,
+  faAngleUp,
+  faAnglesDown,
+  faAnglesRight
 } from "@fortawesome/free-solid-svg-icons";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import styles from "./agenda.module.css";
-import { faArrowAltCircleDown } from "@fortawesome/free-solid-svg-icons/faArrowAltCircleDown";
 
 interface Card {
   title: string;
@@ -148,19 +150,29 @@ function ComputationTableSkeleton({
 
 const up = (
   <FontAwesomeIcon
-    icon={faArrowAltCircleUp}
+    icon={faAngleUp}
+    // icon={faArrowAltCircleUp}
     style={{ color: "var(--accent-magenta-soft)" }}
   />
 );
 
 const down = (
   <FontAwesomeIcon
-    icon={faArrowAltCircleDown}
+    icon={faAngleDown}
+    // icon={faArrowAltCircleDown}
     style={{ color: "var(--accent-sage)" }}
   />
 );
 
-const neutral = <FontAwesomeIcon icon={faCircleMinus} />;
+const neutral = <FontAwesomeIcon icon={faAnglesRight} />;
+
+const star = (
+  <FontAwesomeIcon
+    icon={faAnglesDown}
+    // icon={faStar}
+    style={{ color: "var(--accent-sage)" }}
+  />
+);
 
 const timelineData: TimelineItem[] = [
   {
@@ -245,7 +257,7 @@ const timelineData: TimelineItem[] = [
         },
         {
           title: "Judgment-Impairing Conditions",
-          description: "External conditions known to negatively affecting human judgment.",
+          description: "External conditions known to negatively affect human judgment.",
         },
       ],
     },
@@ -256,7 +268,7 @@ const timelineData: TimelineItem[] = [
     icon: faMagnifyingGlass,
     details: [
        <span key="p1" className={styles.paraLeft}>
-        Evaluating AI–human collaboration on decision-making tasks requires a qualitative understanding of how human professionals interact with AI tools in practice. However, in order to develop less context-specific metrics, this study proposes to run a focus group will allow for extracting the <span style={{color: 'var(--accent-magenta-soft)'}}><i>typology</i> of tasks</span>. This study makes the assumption that the type of task has a greater relation to the mechanism behind human-AI system failure than the application domains alone. 
+        Evaluating AI–human collaboration on decision-making tasks requires a qualitative understanding of how human professionals interact with AI tools in practice. However, in order to develop less context-specific metrics, this study proposes to run a focus group that will allow for extracting the <span style={{color: 'var(--accent-magenta-soft)'}}><i>typology</i> of tasks</span>. This study makes the assumption that the type of task has a greater relation to the mechanism behind human-AI system failure than the application domains alone. 
       </span>,
       <span key="p2" className={styles.paraRight}>
         In other words, this study assumes that tasks grouped by characteristics (filtering, recommendation, ranking, etc.) will share similar mechanisms behind human-AI system failures, regardless of application domain (hiring, medical diagnosis, financial advising, etc.). This will later make it possible to develop ~transferable metrics without reiterating the entire methodological pipeline for every new use case. Data collected in this stage will later serve as independent variables in later stages.
@@ -344,6 +356,7 @@ const timelineData: TimelineItem[] = [
             Quantitative evaluation of human disempowerment cues across task types and judgment-impairing conditions.
           </p>
           <div style={{ height: "2rem" }} />
+        <h4 style={{marginBottom: '0.75rem'}}>Output Format:</h4>
         <MatrixSkeleton
           rowLabel="Task Types"
           colLabel="Judgment-Impairing Conditions"
@@ -365,24 +378,23 @@ const timelineData: TimelineItem[] = [
     title: "Deriving Metrics",
     icon: faFlask,
     details: [
-      <>
+      <span key="p1" className={styles.paraLeft}>
         In the vast majority of real-world contexts, humans tend to <span style={{color: 'var(--accent-magenta-soft)'}}>overcorrect for probability</span>. In other words, we pay attention to probable but low-value events but disregard improbable but high-value events. This bias is practical (people <i>should</i> take more precautions against getting pickpocketed rather than struck by the lightning), but unhelpful in measuring risk. Improbable but costly risk from AI must still be taken seriously. Data collected throughout this study will allow for combining severity and probability values for specific tasks, <span style={{color: 'var(--accent-magenta-soft)'}}>computing unbiased expected values for disempowerment risk</span>, and generating early warnings when appropriate.
-      </>,
-      <div style={{ height: "2rem" }} />,
-      <>
+      </span>,
+      <span key="p2" className={styles.paraRight}>
         <ComputationTableSkeleton
       rows={[
         [up, up, up, up],
-        [up, up, down, down],
+        [up, up, down, neutral],
         [up, down, up, up],
-        [up, down, down, neutral],
+        [up, down, down, down],
         [down, up, up, up],
-        [down, down, up, neutral],
+        [down, down, up, star],
         [down, up, down, down],
         [down, down, down, down],
       ]}
     />
-      </>
+      </span>
     ],
   },
 ];

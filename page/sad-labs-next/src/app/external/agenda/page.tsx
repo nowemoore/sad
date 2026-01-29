@@ -306,6 +306,7 @@ const timelineData: TimelineItem[] = [
           </p>
           <div style={{ height: "2rem" }} />
           <h4 style={{marginBottom: '0.75rem'}}>Output Format:</h4>
+          <div className={styles.matrixScale}>
           <MatrixSkeleton
           rowLabel="Task Types"
           colLabel="Judgment-Impairing Conditions"
@@ -318,7 +319,8 @@ const timelineData: TimelineItem[] = [
             </>
           }
         />
-        <div style={{ height: "2rem" }} />
+        </div>
+        <div className={styles.matrixScale}>
           <MatrixSkeleton
           rowLabel="Task Types"
           colLabel="Judgment-Impairing Conditions"
@@ -331,6 +333,7 @@ const timelineData: TimelineItem[] = [
             </>
           }
         />
+        </div>
         </>
       ),
     },
@@ -357,6 +360,7 @@ const timelineData: TimelineItem[] = [
           </p>
           <div style={{ height: "2rem" }} />
         <h4 style={{marginBottom: '0.75rem'}}>Output Format:</h4>
+        <div className={styles.matrixScale}>
         <MatrixSkeleton
           rowLabel="Task Types"
           colLabel="Judgment-Impairing Conditions"
@@ -369,6 +373,7 @@ const timelineData: TimelineItem[] = [
             </>
           }
         />
+        </div>
         </>
       ),
     },
@@ -378,10 +383,11 @@ const timelineData: TimelineItem[] = [
     title: "Deriving Metrics",
     icon: faFlask,
     details: [
-      <span key="p1" className={styles.paraLeft}>
+      <>
         In the vast majority of real-world contexts, humans tend to <span style={{color: 'var(--accent-magenta-soft)'}}>overcorrect for probability</span>. In other words, we pay attention to probable but low-value events but disregard improbable but high-value events. This bias is practical (people <i>should</i> take more precautions against getting pickpocketed rather than struck by the lightning), but unhelpful in measuring risk. Improbable but costly risk from AI must still be taken seriously. Data collected throughout this study will allow for combining severity and probability values for specific tasks, <span style={{color: 'var(--accent-magenta-soft)'}}>computing unbiased expected values for disempowerment risk</span>, and generating early warnings when appropriate.
-      </span>,
-      <span key="p2" className={styles.paraRight}>
+      </>,
+      <div style={{ height: "1rem" }} />,
+      <>
         <ComputationTableSkeleton
       rows={[
         [up, up, up, up],
@@ -394,7 +400,7 @@ const timelineData: TimelineItem[] = [
         [down, down, down, down],
       ]}
     />
-      </span>
+      </>
     ],
   },
 ];

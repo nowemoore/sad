@@ -315,6 +315,14 @@
 }
 
 /* matrix */
+.matrixScale {
+  transform: scale(0.7);      
+  transform-origin: top left;
+  margin-bottom: -2.5rem;
+}
+
+
+
 .matrixLegend {
   width: 100%;
   border-collapse: collapse;

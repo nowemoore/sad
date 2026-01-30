@@ -383,9 +383,9 @@ const timelineData: TimelineItem[] = [
     title: "Deriving Metrics",
     icon: faFlask,
     details: [
-      <>
+      <p>
         In the vast majority of real-world contexts, humans tend to <span style={{color: 'var(--accent-magenta-soft)'}}>overcorrect for probability</span>. In other words, we pay attention to probable but low-value events but disregard improbable but high-value events. This bias is practical (people <i>should</i> take more precautions against getting pickpocketed rather than struck by the lightning), but unhelpful in measuring risk. Improbable but costly risk from AI must still be taken seriously. Data collected throughout this study will allow for combining severity and probability values for specific tasks, <span style={{color: 'var(--accent-magenta-soft)'}}>computing unbiased expected values for disempowerment risk</span>, and generating early warnings when appropriate.
-      </>,
+      </p>,
       <div style={{ height: "1rem" }} />,
       <>
         <ComputationTableSkeleton
@@ -472,9 +472,9 @@ export default function AgendaPage() {
                         {/* LHS: paragraphs */}
                         <div className={styles.detailsColumn}>
                           {item.details.map((para, idx) => (
-                            <p key={idx} className={styles.detailsText}>
+                            <div key={idx} className={styles.detailsText}>
                               {para}
-                            </p>
+                            </div>
                           ))}
                         </div>
 

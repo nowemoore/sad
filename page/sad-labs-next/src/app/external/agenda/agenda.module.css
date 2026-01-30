@@ -167,6 +167,8 @@
 }
 
 .detailsText {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 200;
   max-width: none;
 }
 

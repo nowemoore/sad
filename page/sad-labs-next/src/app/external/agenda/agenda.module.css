@@ -167,8 +167,9 @@
 }
 
 .detailsText {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 200;
+  font-size: 0.95rem;
   max-width: none;
 }
 

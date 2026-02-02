@@ -9,6 +9,28 @@
   margin: 0 auto;
 }
 
+.timelineCentered {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 20rem; 
+  transition: max-width 0.3s ease;
+}
+
+.timelineExpanded {
+  max-width: 65rem; 
+  transition: max-width 0.3s ease;
+}
+
+.contentHidden {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.contentVisible {
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
 /* HEADER */
 .header {
   text-align: center;

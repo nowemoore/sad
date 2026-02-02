@@ -407,9 +407,16 @@ const timelineData: TimelineItem[] = [
 
 export default function AgendaPage() {
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [contentVisibleId, setContentVisibleId] = useState<string | null>(null);
 
   const toggleExpand = (id: string) => {
-    setExpandedId((prev) => (prev === id ? null : id));
+    if (expandedId === id) {
+      setContentVisibleId(null);
+      setTimeout(() => setExpandedId(null), 50);
+    } else {
+      setExpandedId(id);
+      setTimeout(() => setContentVisibleId(id), 300);
+    }
   };
 
   return (
@@ -432,7 +439,7 @@ export default function AgendaPage() {
           </p>
         </div>
 
-        <div className={styles.timeline}>
+        <div className={`${styles.timeline} ${expandedId ? styles.timelineExpanded : styles.timelineCentered}`}>
           <div className={styles.line} />
 
           {timelineData.map((item) => {
@@ -467,7 +474,7 @@ export default function AgendaPage() {
                       isExpanded ? styles.expandWrapperOpen : ""
                     }`}
                   >
-                    <div className={styles.expandInner}>
+                    <div className={`${styles.expandInner} ${contentVisibleId === item.id ? styles.contentVisible : styles.contentHidden}`}>
                       <div className={styles.expandGrid}>
                         {/* LHS: paragraphs */}
                         <div className={styles.detailsColumn}>

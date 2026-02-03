@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBookOpen,
@@ -12,7 +13,6 @@ import {
   faCircleChevronDown,
   faRoute,
   faLink,
-  faCircleMinus,
   faAngleDown,
   faAngleUp,
   faAnglesDown,
@@ -20,6 +20,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import styles from "./agenda.module.css";
+import { faChevronCircleLeft } from "@fortawesome/free-solid-svg-icons/faChevronCircleLeft";
 
 interface Card {
   title: string;
@@ -437,6 +438,11 @@ export default function AgendaPage() {
   return (
     <main>
       <section style={{ padding: "3.5rem clamp(2rem, 6vw, 4rem)" }}>
+       <div className={styles.headerRow}>
+        <Link href="/" className={styles.backLink} aria-label="Back to home">
+          <FontAwesomeIcon icon={faChevronCircleLeft} />
+          back to main
+        </Link>
         <div className={styles.header}>
           <h1 className={styles.pageTitle}>
             Research Roadmap <FontAwesomeIcon icon={faRoute} />
@@ -450,6 +456,7 @@ export default function AgendaPage() {
             </span>{" "}
             in decision-making. This agenda goes <span style={{ color: "var(--accent-sage)" }}>beyond</span> model-focused evaluation frameworks by taking what modern science knows about human judgement and using that to expose where human-AI decision-making systems <span style={{ color: "var(--accent-forest)" }}>fail</span>. Click through the below sections to explore how:
           </p>
+        </div>
         </div>
 
         <div className={`${styles.timeline} ${expandedId ? styles.timelineExpanded : styles.timelineCentered}`}>

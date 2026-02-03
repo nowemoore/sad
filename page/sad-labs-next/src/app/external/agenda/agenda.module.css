@@ -48,9 +48,9 @@
 }
 
 .pageSubtitle {
-  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-size: clamp(0.98rem, 1.5vw, 1.1rem);
   font-weight: 300;
-  line-height: 1.6;
+  line-height: 1.4;
   color: var(--text-secondary, rgba(255, 255, 255, 0.7));
   max-width: 50rem;
   margin: 0 auto;
@@ -125,6 +125,7 @@
   padding: 0;
   cursor: pointer;
   text-align: left;
+  width: 100%;
 }
 
 .title {
@@ -205,6 +206,19 @@
   display: block;
   margin-left: clamp(3rem, 8vw, 6rem);
   max-width: auto;
+}
+
+.paraEnd {
+  display: block;
+  text-align: right;
+  margin-left: auto;
+  max-width: 40rem;
+  padding-right: clamp(2rem, 6vw, 4rem); 
+  margin-top: 2rem;
+}
+
+.paraEnd a {
+  display: inline;
 }
 
 .definitionsColumn {

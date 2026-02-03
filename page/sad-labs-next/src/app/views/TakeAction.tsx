@@ -95,10 +95,10 @@ export default function TakeAction() {
         </div>   
         <span></span>
        <p style={{ marginTop: '1rem', marginLeft: 'auto', marginRight: '0', width: 'fit-content', textAlign: 'right' }}>
-          For general inquiries, please reach out to{' '}
+          If this sparked something or you want to explore working together, please reach out to{' '}
           <a href="mailto:nowe.moore@gmail.com" style={{ color: "var(--accent-forest)" }}>
             nowe.moore@gmail.com
-          </a>
+          </a>.
         </p>
       </div>
     </section>

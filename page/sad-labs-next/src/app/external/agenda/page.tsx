@@ -239,9 +239,7 @@ const timelineData: TimelineItem[] = [
           risk level
           <FontAwesomeIcon icon={faLink}></FontAwesomeIcon>
         </a>
-        . While AI may not <i>experience</i> any of these conditions, they may
-        amplify where human-AI systems fail and expose where disempowerment
-        prevails.
+        . While AI may not <i>experience</i> any of these conditions, they may trigger unexpected behaviours in AI and/or humans that collapse this collaborative system.
       </span>,
     ],
     sideContent: {
@@ -294,7 +292,7 @@ const timelineData: TimelineItem[] = [
        The present study shall conduct controlled experiments to understand models' role in human-AI collaboration failures. For every select task type (based on focus group data) and judgment-impairing condition (based on prior literature), this study evaluates models for <span style={{color: 'var(--accent-magenta-soft)'}}><b>error rates</b></span> (how often models fail to maintain their decision-making standard under judgment-impairing conditions when asked to decide) and <span style={{color: 'var(--accent-magenta-soft)'}}><b>behaviour conductive of disempowerment</b></span> (indications of models encouraging lack of oversight, agency, or impact in human-AI collaboration).
       </span>,
       <span key="p2" className={styles.paraRight}>
-       This process will result in <span style={{color: 'var(--accent-magenta-soft)'}}>two <b>severity matrices</b></span>, directly indicating how models contribute to disempowerment across task types and judgment-impairing conditions. The performance matrix will identify tasks where human overreliance can be particularly dangerous due to skewed capability. The behaviour matrix will identify potential amplification of disempowerment risks in human-AI collaboration. Together, these matrices will contribute to the final derivation of metrics.
+       This process will result in <span style={{color: 'var(--accent-magenta-soft)'}}><b>two severity matrices</b></span>, directly indicating how models contribute to disempowerment across task types and judgment-impairing conditions. The performance matrix will identify tasks where human overreliance can be particularly dangerous due to skewed capability. The behaviour matrix will identify potential amplification of disempowerment risks in human-AI collaboration. Together, these matrices will contribute to the final derivation of metrics.
       </span>,
     ],
     sideContent: {
@@ -383,10 +381,16 @@ const timelineData: TimelineItem[] = [
     title: "Deriving Metrics",
     icon: faFlask,
     details: [
-      <p>
-        In the vast majority of real-world contexts, humans tend to <span style={{color: 'var(--accent-magenta-soft)'}}>overcorrect for probability</span>. In other words, we pay attention to probable but low-value events but disregard improbable but high-value events. This bias is practical (people <i>should</i> take more precautions against getting pickpocketed rather than struck by the lightning), but unhelpful in measuring risk. Improbable but costly risk from AI must still be taken seriously. Data collected throughout this study will allow for combining severity and probability values for specific tasks, <span style={{color: 'var(--accent-magenta-soft)'}}>computing unbiased expected values for disempowerment risk</span>, and generating early warnings when appropriate.
-      </p>,
+      <span key="p1" className={styles.paraLeft}>
+        The final part of this study is where all pieces come together to form a risk metric for gradual disempowerment in human-AI decision-making. By combining the two severity matrices (model error rates and disempowerment-conducive behaviour) with the probability matrix (disempowerment cues from human real-world interactions with models), this study derives <span style={{color: 'var(--accent-magenta-soft)'}}>expected values for disempowerment risk</span> across task types and judgment-impairing conditions. We arrive at a metric that will grow in accuracy and reliability upon collecting more data and can be customised to specific use cases.
+      </span>,
+      <span key="p1" className={styles.paraRight}>
+        Left to their own devices, humans tend to <span style={{color: 'var(--accent-sage)'}}>overcorrect for probability</span>: we pay attention to probable but low-value events but disregard improbable but high-value events. This bias is practical (people <i>should</i> take more precautions against getting pickpocketed rather than struck by the lightning), but unhelpful in measuring exposure to disempowerment. Improbable but costly risk from AI must still be taken seriously. Probable but low-cost risk should likewise be monitored. This study's metric accounts for both extremes, providing a foundation for early detection and context-specific response when appropriate. 
+      </span>,
       <div style={{ height: "1rem" }} />,
+      <p>
+        View intuitions for the predicted interpretation of the final outcome below:
+      </p>,
       <>
         <ComputationTableSkeleton
       rows={[
@@ -395,8 +399,8 @@ const timelineData: TimelineItem[] = [
         [up, down, up, up],
         [up, down, down, down],
         [down, up, up, up],
-        [down, down, up, star],
         [down, up, down, down],
+        [down, down, up, star],
         [down, down, down, down],
       ]}
     />
@@ -416,26 +420,35 @@ export default function AgendaPage() {
     } else {
       setExpandedId(id);
       setTimeout(() => setContentVisibleId(id), 300);
+      
+      // Scroll to the expanded section after animation starts
+      setTimeout(() => {
+        const element = document.getElementById(`timeline-item-${id}`);
+        if (element) {
+          element.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' // or 'center' if you prefer
+          });
+        }
+      }, 50);
     }
-  };
+  };  
 
   return (
     <main>
-      <section style={{ padding: "4rem clamp(2rem, 6vw, 4rem)" }}>
+      <section style={{ padding: "3.5rem clamp(2rem, 6vw, 4rem)" }}>
         <div className={styles.header}>
           <h1 className={styles.pageTitle}>
             Research Roadmap <FontAwesomeIcon icon={faRoute} />
           </h1>
 
           <p className={styles.pageSubtitle}>
-            The goal of this agenda is to{" "}
+            The goal of this research is to{" "}
             <span style={{ color: "var(--accent-magenta-soft)" }}>
               define the line between (helpful) AI augmentation and (harmful)
               displacement of human choice
             </span>{" "}
-            by understanding both sides of human-AI collaboration on
-            decision-making tasks. Here is how to get from ambiguous concepts to
-            concrete metrics:
+            in decision-making. This agenda goes <span style={{ color: "var(--accent-sage)" }}>beyond</span> model-focused evaluation frameworks by taking what modern science knows about human judgement and using that to expose where human-AI decision-making systems <span style={{ color: "var(--accent-forest)" }}>fail</span>. Click through the below sections to explore how:
           </p>
         </div>
 
@@ -446,8 +459,12 @@ export default function AgendaPage() {
             const isExpanded = expandedId === item.id;
 
             return (
-              <div key={item.id} className={styles.item}>
-                <div className={styles.dot}>
+              <div key={item.id} id={`timeline-item-${item.id}`} className={styles.item}>
+                <div 
+                  className={styles.dot}
+                  onClick={() => toggleExpand(item.id)}
+                  style={{ cursor: 'pointer' }}
+                >
                   <span className={styles.dotIcon}>
                     <FontAwesomeIcon icon={item.icon} />
                   </span>
@@ -460,11 +477,7 @@ export default function AgendaPage() {
                     aria-expanded={isExpanded}
                   >
                     <h3 className={styles.title}>{item.title}</h3>
-                    <span
-                      className={`${styles.chevron} ${
-                        isExpanded ? styles.chevronUp : ""
-                      }`}
-                    >
+                    <span className={`${styles.chevron} ${isExpanded ? styles.chevronUp : ""}`}>
                       <FontAwesomeIcon icon={faCircleChevronDown} />
                     </span>
                   </button>
@@ -563,6 +576,9 @@ export default function AgendaPage() {
             );
           })}
         </div>
+        <p className={styles.paraEnd}>
+          Got questions, ideas, or complaints about this agenda? Working on adjacent problems? Get in touch: <a href="mailto:nowemoore@gmail.com" style={{color: 'var(--accent-sage)'}}>nowemoore@gmail.com</a>.
+        </p>
       </section>
     </main>
   );

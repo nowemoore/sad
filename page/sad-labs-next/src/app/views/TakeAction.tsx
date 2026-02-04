@@ -46,23 +46,6 @@ export default function TakeAction() {
 
             <div className={styles.actionItem}>
               <div className={styles.actionIcon}>
-                <FontAwesomeIcon icon={faPuzzlePiece} />
-              </div>
-              <h2 className={styles.actionTitle}>Work on Helpful Questions</h2>
-              <p className={styles.actionText}>Investigate ready-to-research open questions from SAD question bank.</p>
-
-              <div className={styles.centerBtn}>
-                  <ActionButton href="https://airtable.com/appGoEa2TUeXbwDRO/shrBefuusGierQcgi">
-                    View Question Bank
-                  </ActionButton>
-              </div>
-            </div>
-          </div>  
-
-          <div className={styles.horizontalGrid} style={{ gridTemplateColumns: '0.5fr 1fr 1fr 0.5fr', marginBottom: '0' }}>
-            <span></span>
-            <div className={styles.actionItem}>
-              <div className={styles.actionIcon}>
                 <FontAwesomeIcon icon={faCalendarCheck} />
               </div>
               <h2 className={styles.actionTitle}>Join the Next Infosession</h2>
@@ -73,6 +56,26 @@ export default function TakeAction() {
               <div className={styles.centerBtn}>
                   <ActionButton href="https://airtable.com/appGoEa2TUeXbwDRO/pagUZLqcAZhWoqQOh/form">
                     Sign Up Here
+                  </ActionButton>
+              </div>
+
+              <p style={{fontSize: '0.7rem', marginTop: '1rem'}}>Next session coming: <span style={{color: 'var(--accent-sage)'}}>11 Feb 2026</span>!</p>
+            </div>
+          </div>  
+
+          <div className={styles.horizontalGrid} style={{ gridTemplateColumns: '0.5fr 1fr 1fr 0.5fr', marginBottom: '0' }}>
+            <span></span>
+            
+            <div className={styles.actionItem}>
+              <div className={styles.actionIcon}>
+                <FontAwesomeIcon icon={faPuzzlePiece} />
+              </div>
+              <h2 className={styles.actionTitle}>Work on Helpful Questions</h2>
+              <p className={styles.actionText}>Investigate ready-to-research open questions from SAD question bank.</p>
+
+              <div className={styles.centerBtn}>
+                  <ActionButton href="https://airtable.com/appGoEa2TUeXbwDRO/shrBefuusGierQcgi">
+                    View Question Bank
                   </ActionButton>
               </div>
             </div>

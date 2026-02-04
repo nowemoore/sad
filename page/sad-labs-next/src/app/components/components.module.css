@@ -1,3 +1,42 @@
+/* components/LoadingScreen.module.css */
+.loadingScreen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-root, #0a0a0a);
+  transition: opacity 0.5s ease;
+}
+
+.fadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.iconWrapper {
+  filter: drop-shadow(0 0 10px var(--accent-magenta));
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: clamp(4rem, 7vw, 5rem);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
 /* ============ Navbar ============ */
 .navbar {
   background-color: rgba(0, 0, 0, 0.058);

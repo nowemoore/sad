@@ -59,15 +59,7 @@ export default function Objective() {
               </h2>
 
               <p className={styles.cardText}>
-                Imagine an engine that will analyse decision-makers&apos;
-                interactions with AI in real time and provide early warnings of
-                overreliance{" "}
-                <span style={{ color: "var(--accent-magenta-soft)" }}>
-                  before
-                </span>{" "}
-                it scales. SAD research develops metrics to bring such
-                tools to life and help organisations verify that their use of AI
-                remains for the better.
+                SAD develops metrics to power <span style={{color: 'var(--accent-magenta)'}}>real-time monitoring engines</span>, giving organisations early visibility into their exposure to AI risk before loss of control scales. Actionable insights that keeps organisations ahead.
               </p>
 
               <ActionButton href="/external/demo">
@@ -103,14 +95,7 @@ export default function Objective() {
               </h2>
 
               <p className={styles.cardText}>
-                In pursuit of such tools, SAD Labs continues conducting thorough
-                research on human-AI interaction, particularly in high-risk
-                contexts. This work will contribute to evaluations, safeguards,
-                and policies that{" "}
-                <span style={{ color: "var(--accent-magenta-soft)" }}>
-                  preserve human agency
-                </span>{" "}
-                in AI-assisted decisions.
+                Robust safeguards start with robust evidence. SAD studies high-risk interactions to help organisations preserve agency where it matters most, contributing to knowledge in <span style={{color: 'var(--accent-teal)'}}>AI evaluation, safeguards, and governance</span> on the way.
               </p>
 
               <ActionButton href="/external/agenda">

@@ -21,14 +21,13 @@ export default function TakeAction() {
               </div>
               <h2 className={styles.actionTitle}><span className={styles.titleIcon}></span>Join the Effort</h2>
               <p className={styles.actionText}>
-                We're growing! Contribute your skills to a research, ops, or outreach role at SAD Labs.
-              </p>
-
-                <div className={styles.centerBtn}>
-                  <ActionButton href="https://airtable.com/appGoEa2TUeXbwDRO/pagCC47tkGZm2EHHy/form">
-                    Express Interest
-                  </ActionButton>
-                </div>
+                SAD Labs is growing! Contribute your skills to research, ops, or outreach at SAD Labs.</p>
+              <div className={styles.centerBtn}>
+                <ActionButton href="https://airtable.com/appGoEa2TUeXbwDRO/pagCC47tkGZm2EHHy/form">
+                  Express Interest
+                </ActionButton>
+              </div>
+              <p style={{fontSize: '0.7rem', marginTop: '1rem'}}>If you have background in <b>LLM evals, game theory, HCI and/or outreach-relevant skills</b>, we'll be particularly excited to hear from you!</p>
             </div>
 
             <div className={styles.actionItem}>

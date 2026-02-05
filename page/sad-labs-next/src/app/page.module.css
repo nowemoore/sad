@@ -323,53 +323,49 @@
 }
 
 /* ACTION */
-.actionItem {
-  position: relative;
+.actionList {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-
-  padding: clamp(0.1rem, 0.7vw, 0.3rem);
-  opacity: 0.7;
-
-  transition: opacity 0.25s ease, transform 0.25s ease;
-  will-change: transform;  
+  gap: 0.5rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.actionItem:hover {
-  animation: scale-breathe 7s ease-in-out infinite;
-  opacity: 1;
+.actionRowHighlight {
+  background: rgba(167, 26, 150, 0.1) !important;
+  border-color: rgba(167, 26, 150, 0.25) !important;
 }
 
-.actionIcon {
-  width: clamp(4rem, 10vw, 6rem);
-  height: clamp(2rem, 8vw, 4rem);
-  
+.actionRowIcon {
+  font-size: 3rem;
+  color: var(--accent-sage);
   display: flex;
   align-items: center;
   justify-content: center;
-
-  margin-bottom: 0;
 }
 
-.actionIcon svg {
-  font-size: clamp(1rem, 2vw, 2rem);
+.actionRowContent {
+  min-width: 0;
 }
 
-.actionTitle {
-  font-size: clamp(0.8rem, 1.5vw, 1rem);
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-
-  color: var(--accent-magenta-soft);
+.actionRowTitle {
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin: 0 0 0.2rem 0;
+  color: var(--accent-sage);
 }
 
-.approachText {
-  font-size: clamp(0.85rem, 1.2vw, 1rem);
+.actionRowDescription {
+  font-size: 0.95rem;
+  margin: 0;
   color: var(--text-secondary);
-  max-width: 22rem;
-} 
+  line-height: 1.4;
+}
+
+.actionList a {
+  width: 100% !important;
+  flex: 1;
+}
 
 /* MOBILE ADJUSTMENTS */
 @media (max-width: 640px) {

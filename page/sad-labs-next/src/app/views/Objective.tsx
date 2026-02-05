@@ -59,7 +59,7 @@ export default function Objective() {
               </h2>
 
               <p className={styles.cardText}>
-                SAD develops metrics to power <span style={{color: 'var(--accent-magenta)'}}>real-time monitoring engines</span>, giving organisations early visibility into their exposure to AI risk before loss of control scales. Actionable insights that keeps organisations ahead.
+                SAD develops metrics to power <span style={{color: 'var(--accent-magenta)'}}>real-time monitoring engines</span>, giving organisations early visibility into their exposure to AI risk before loss of control scales. Actionable insights keep organisations ahead.
               </p>
 
               <ActionButton href="/external/demo">

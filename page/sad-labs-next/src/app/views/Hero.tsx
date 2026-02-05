@@ -8,7 +8,7 @@ export default function Hero() {
           className={`${styles.heroSubtitleTop} staggerItem`}
           style={{ animationDelay: "0ms" }}
         >
-          Research Initiative for
+          Research & Development Labs for
         </span>
 
         <div className={styles.heroBreathingWrapper}>

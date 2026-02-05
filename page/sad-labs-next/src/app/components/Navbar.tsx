@@ -24,8 +24,8 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { label: "Objective", href: "#objective", icon: faBullseye },
-  { label: "Problem", href: "#problem", icon: faRoadBarrier },
   { label: "Approach", href: "#approach", icon: faMagnifyingGlass },
+  { label: "Problem", href: "#problem", icon: faRoadBarrier },
   { label: "Timeline", href: "#timeline", icon: faClock },
   { label: "Take Action", href: "#take-action", icon: faRocket },
 ];

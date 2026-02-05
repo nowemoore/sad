@@ -14,17 +14,14 @@ import Timeline from "./views/Timeline";
 import TakeAction from "./views/TakeAction";
 
 export default function Page() {
-  // ... your existing useEffect
-
   return (
     <div className="App">
       <LoadingScreen />
-      
       <Navbar />
       <Hero />
       <Objective />
-      <Problem />
       <Approach />
+      <Problem />
       <Timeline />
       <TakeAction />
       <Footer />

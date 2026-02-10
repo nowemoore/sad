@@ -1,7 +1,7 @@
-import styles from "../page.module.css";
+import styles from "../../research/views/views.module.css";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRocket, faPeopleGroup, faCrown, faMagnifyingGlass, faCubesStacked, faShield, faArrowsUpDownLeftRight} from '@fortawesome/free-solid-svg-icons';
+import { faRocket, faPeopleGroup, faCrown, faMagnifyingGlass, faCubesStacked, faShield, faArrowsUpDownLeftRight, faArrowsTurnRight} from '@fortawesome/free-solid-svg-icons';
 
 export default function Timeline() {
   const events = [
@@ -11,7 +11,7 @@ export default function Timeline() {
     icon: faPeopleGroup,
     topContent: {
       title: 'Unite Researchers',
-      description: 'Establish a coordinated network aligned on SAD objectives.',
+      description: 'Establish a coordinated network aligned on RAD objectives.',
     },
     bottomContent: null,
   },
@@ -77,7 +77,7 @@ export default function Timeline() {
   return (
     <section id="timeline" className="section timeline-section surface-a">
       <div className="section-container">
-        <h2 className="section-title from-bottom">Timeline</h2>
+        <h2 className="section-title from-bottom"><FontAwesomeIcon icon={faArrowsTurnRight}></FontAwesomeIcon> Timeline</h2>
 
         <div className={styles.timeline}>
           <div className={styles.line} />

@@ -1,0 +1,175 @@
+/* BUSINESS PROBLEM - EXPOSURE CARDS */
+.exposureGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 5rem;
+  align-items: start;
+  width: 90vw;
+  max-width: 80rem;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.exposureCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  height: auto;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+}
+
+.exposureCard:hover {
+  opacity: 1;
+  border-color: var(--accent-magenta);
+}
+
+.cardUp {
+  margin-top: -2rem;
+}
+
+.cardDown {
+  margin-top: 2rem;
+}
+
+.exposureIcon {
+  font-size: 2.5rem;
+  color: var(--accent-magenta-soft);
+  margin-bottom: 1rem;
+}
+
+.exposureTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.exposureText {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* Mobile adjustments */
+@media (max-width: 640px) {
+  .exposureGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .cardUp,
+  .cardDown {
+    margin-top: 0;
+  }
+}
+
+/* OBJECTIVES */
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-top: 3rem;
+  align-items: start;
+  width: 80vw;
+  max-width: 80rem;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.featureItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  transition: transform 1s ease;
+  will-change: transform;
+}
+
+.featureItem:hover {
+  transform: scale(1.02);
+}
+
+.featureIcon {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.featureIcon svg {
+  font-size: 3rem;
+}
+
+.featureTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.featureText {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  max-width: 28rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.ctaSection {
+  width: 100vw;
+  background: radial-gradient(circle at center, #07b19542 0%, #07b19510 100%);
+  padding: 3rem 0;
+  margin-top: 4rem;
+  margin-top: auto;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+.objectiveCTAs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10rem;
+  max-width: 80rem;
+  margin: 2rem auto;
+}
+
+.objectiveCTAs a {
+  width: 100%;
+  font-size: 1.1rem; 
+  padding: 1rem 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .objectiveCTAs {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 640px) {
+  .objectiveGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .objectiveItem {
+    opacity: 1;
+  }
+}

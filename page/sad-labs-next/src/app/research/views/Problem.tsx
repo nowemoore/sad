@@ -1,13 +1,16 @@
-import styles from "../page.module.css";
+import styles from "./views.module.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHatCowboy, faHourglass, faSignsPost, faLightbulb } from "@fortawesome/free-solid-svg-icons";
+import { faHatCowboy, faHourglass, faSignsPost, faLightbulb, faRoadBarrier } from "@fortawesome/free-solid-svg-icons";
 
 export default function Problem() {
   return (
-    <section id="problem" className="section problem-section surface-top">
+    <section 
+      id="problem" 
+      className="section problem-section surface-top"
+      >
       <div className="section-container">
-        <h1 className="section-title from-bottom">About the Problem</h1>
+        <h1 className="section-title from-bottom"><FontAwesomeIcon icon={faRoadBarrier}></FontAwesomeIcon> About the Problem</h1>
         <div className={styles.horizontalGrid} style={{ gridTemplateColumns: "2fr 2fr" }}>
           <div className={styles.verticalGrid} style={{ gridTemplateRows: "auto 10fr auto 10fr" }}>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -37,7 +40,7 @@ export default function Problem() {
 
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <h2 className={styles.cardTitle} style={{marginBottom: '0.75rem'}}><div className={styles.titleIcon} style={{color: "var(--text-primary)"}}><FontAwesomeIcon icon={faLightbulb}/></div>Missing Metrics</h2>
-              <p>In 2026, we continue being unable to put early warnings and safeguards in place because there are no robust metrics for overreliance. This makes sense&mdash;it's a complex problem. Nonetheless, humanity needs metrics to manage the risks of AI-assisted decisions. <span style={{ color: "var(--accent-magenta-soft)" }}>For that reason, SAD Labs are up for the challenge.</span></p>
+              <p>In 2026, we continue being unable to put early warnings and safeguards in place because there are no robust metrics for overreliance. This makes sense&mdash;it's a complex problem. Nonetheless, humanity needs metrics to manage the risks of AI-assisted decisions. <span style={{ color: "var(--accent-magenta-soft)" }}>For that reason, RAD Labs are up for the challenge.</span></p>
             </div>
           </div>
         </div>

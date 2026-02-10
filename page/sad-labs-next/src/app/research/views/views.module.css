@@ -1,3 +1,196 @@
+/* principles bg seciton */
+.principlesSection {
+  width: 100vw;
+  position: relative;
+  padding: 3rem 0;
+  margin-top: calc(-1 * clamp(5rem, 12vw, 6.25rem));
+  padding-top: calc(3rem + clamp(5rem, 12vw, 6.25rem));
+  
+  background-image: var(--section-bg-image, none);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.principlesSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--section-overlay, transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.principlesSection > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* RESEARCH OBJECTIVES */
+.objectiveGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 5rem;
+  align-items: start;
+  width: 90vw;
+  max-width: 80rem;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.objectiveCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  height: auto;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+}
+
+.objectiveCard:hover {
+  opacity: 1;
+  border-color: var(--accent-sage);
+}
+
+.cardUp {
+  margin-top: -2rem;
+}
+
+.cardDown {
+  margin-top: 2rem;
+}
+
+.objectiveIcon {
+  font-size: 2.5rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.objectiveTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.objectiveText {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Mobile adjustments */
+@media (max-width: 640px) {
+  .objectiveGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .cardUp,
+  .cardDown {
+    margin-top: 0;
+  }
+}
+
+/* OBJECTIVES */
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-top: 3rem;
+  align-items: start;
+  width: 80vw;
+  max-width: 80rem;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.featureItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  transition: transform 1s ease;
+  will-change: transform;
+}
+
+.featureItem:hover {
+  transform: scale(1.02);
+}
+
+.featureIcon {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.featureIcon svg {
+  font-size: 3rem;
+}
+
+.featureTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.featureText {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  max-width: 28rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.objectiveCTAs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10rem;
+  margin-top: 3rem;
+  max-width: 50rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.objectiveCTAs a {
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .objectiveCTAs {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 640px) {
+  .objectiveGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .objectiveItem {
+    opacity: 1;
+  }
+}
+
 /* text general */
 .titleIcon {
   display: inline-flex;
@@ -34,15 +227,14 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding-bottom: 5rem;
 }
 
 .heroContent {
   max-width: 50rem;
   width: 100%;
   margin: 0 auto;
-  padding-bottom: 0;
-  padding-top: 6rem;
+  padding: 0 clamp(2rem, 6vw, 4rem);
+  padding-top: 7rem;
 }
 
 .heroSubtitleTop {
@@ -78,164 +270,51 @@
 
 .heroPathways {
   display: flex;
-  gap: 5rem;
+  gap: 10rem;
   margin-top: 2.5rem;
   justify-content: center;
 }
 
 .pathwayCard {
-  margin-top: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  text-decoration: none;
-  color: var(--text-primary);
-  padding: 1.5rem 2rem;
-  width: auto;
-  height: auto;
-  border-radius: 50rem;
-  
-  /* Glass effect */
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.08),
-    rgba(255, 255, 255, 0.03)
-  );
-  backdrop-filter: blur(14px) saturate(120%);
-  -webkit-backdrop-filter: blur(14px) saturate(120%);
-  
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.25),
-    0 8px 24px rgba(0, 0, 0, 0.35);
-}
-
-.pathwayCard:hover {
-  color: var(--accent-magenta);
-}
-
-.pathwayCard:hover .pathwayIcon {
-  color: var(--accent-magenta);
-  transform: scale(1.1);
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
-}
-
-.pathwayIcon {
-  font-size: 2.5rem;
-  color: var(--text-primary);
-  transition: all 0.3s ease;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
-}
-
-.pathwayCard span {
-  font-size: 1rem;
-  font-weight: 400;
-}
-
-/* Selection section fade out */
-.selectionSection {
-  animation: fadeIn 0.5s ease;
-}
-
-/* Chevron section */
-.chevronSection {
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  margin-top: 5rem;
-  animation: fadeIn 0.5s ease;
-}
-
-.bouncingChevron {
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-  background: transparent;
-  border: 2px solid var(--text-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  color: var(--text-primary);
-  animation: doubleBounce 2.5s ease-in-out infinite;
-  cursor: pointer;
   transition: all 0.3s ease;
-  opacity: 0.8;
-}
-
-.bouncingChevron:hover {
-  transform: scale(1.05);
-  opacity: 1;
-}
-
-.chevronText {
-  font-size: 1rem;
-  font-weight: 400;
-  color: var(--text-secondary);
-  text-align: center;
-  max-width: 30rem;
-}
-
-.switchViewLink {
-  font-size: 0.85rem;
-  font-weight: 400;
-  color: var(--accent-sage);
+  cursor: pointer;
   text-decoration: none;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
-  margin-top: -0.5rem;
+  color: var(--text-secondary);
 }
 
-.switchViewLink:hover {
-  opacity: 1;
+.pathwayCard:hover {
+  color: var(--text-primary);
 }
 
-@keyframes doubleBounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  15% {
-    transform: translateY(-20px);
-  }
-  30% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  50% {
-    transform: translateY(0);
-  }
-  60%, 100% {
-    transform: translateY(0);
-  }
+.pathwayCard:hover .pathwayIcon {
+  color: var(--accent-sage);
+  transform: scale(1.1);
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.pathwayIcon {
+  font-size: 3rem;
+  color: var(--accent-magenta-soft);
+  transition: all 0.3s ease;
+}
+
+.pathwayCard span {
+  font-size: 0.95rem;
+  font-weight: 400;
 }
 
 /* Rotating cogs animation */
 .pathwayIcon.cogs {
-  animation: rotate 5s ease-in-out infinite;
+  animation: rotate 4s ease-in-out infinite;
 }
 
 /* Pulsing magnifying glass animation */
 .pathwayIcon.magnify {
-  animation: quickZoom 5s ease-in-out infinite;
+  animation: quickZoom 4s ease-in-out infinite;
 }
 
 @keyframes rotate {
@@ -254,13 +333,13 @@
   0%, 24% {
     transform: scale(1);
   }
-  40% {
+  30% {
     transform: scale(1.2);
   }
-  60% {
+  40% {
     transform: scale(1);
   }
-  65%, 100% {
+  45%, 100% {
     transform: scale(1);
   }
 }

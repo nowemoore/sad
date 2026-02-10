@@ -11,7 +11,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.container}>
         <span className={styles.left}>
-          SAD Labs © 2026 
+          RAD Labs © 2026 
         </span>
 
         <span className={styles.right}>

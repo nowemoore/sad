@@ -1,4 +1,4 @@
-import styles from "../page.module.css";
+import styles from "./views.module.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -7,9 +7,10 @@ import {
   faPuzzlePiece,
   faCalendarCheck,
   faSeedling,
+  faRocket,
 } from "@fortawesome/free-solid-svg-icons";
 
-import ActionButton from "../components/ActionButton";
+import ActionButton from "../../components/ActionButton";
 
 const actions = [
   {
@@ -50,7 +51,7 @@ const actions = [
     icon: faComments,
     title: "Guide the Agenda",
     description: (
-      <>If you use AI tools in your work, you know which problems are real and which are hype. Help ground SAD research by sharing how AI contributes to&mdash;and undermines&mdash;decisions in your field. </>
+      <>If you use AI tools in your work, you know which problems are real and which are hype. Help ground RAD research by sharing how AI contributes to&mdash;and undermines&mdash;decisions in your field. </>
     ),
     cta: "Tell Your Story",
     href: "https://airtable.com/appGoEa2TUeXbwDRO/pagNavvL8j9EzjzEX/form",
@@ -59,7 +60,7 @@ const actions = [
     icon: faPuzzlePiece,
     title: "Work on Open Questions",
     description: (
-      <>Looking for a meaningful side project? If you've got research skills and some time, check out this bank full of ready-to-research open questions relevant to SAD objectives.</>
+      <>Looking for a meaningful side project? If you've got research skills and some time, check out this bank full of ready-to-research open questions relevant to RAD objectives.</>
     ),
     cta: "View Questions",
     href: "https://airtable.com/appGoEa2TUeXbwDRO/shrBefuusGierQcgi",
@@ -68,9 +69,12 @@ const actions = [
 
 export default function TakeAction() {
   return (
-    <section id="take-action" className="section action-section">
+    <section 
+      id="take-action" 
+      className="section action-section"
+      >
       <div className="section-container">
-        <h1 className="section-title from-bottom">Be Part of the Solution</h1>
+        <h1 className="section-title from-bottom"><FontAwesomeIcon icon={faRocket}></FontAwesomeIcon> Be Part of the Story</h1>
         <p
           className="section-text from-bottom"
           style={{ marginBottom: "2rem" }}

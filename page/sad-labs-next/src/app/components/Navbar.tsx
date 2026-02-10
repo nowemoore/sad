@@ -2,18 +2,16 @@
 
 import { useState, useEffect } from "react";
 import styles from "./components.module.css";
+import Link from "next/link"; 
 
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCompass,
-  faBullseye,
-  faMagnifyingGlass,
-  faRoadBarrier,
-  faClock,
-  faRocket,
   faBars,
   faXmark,
+  faCog,
+  faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 
 interface NavItem {
@@ -22,15 +20,12 @@ interface NavItem {
   icon: IconDefinition;
 }
 
-const navItems: NavItem[] = [
-  { label: "Objective", href: "#objective", icon: faBullseye },
-  { label: "Approach", href: "#approach", icon: faMagnifyingGlass },
-  { label: "Problem", href: "#problem", icon: faRoadBarrier },
-  { label: "Timeline", href: "#timeline", icon: faClock },
-  { label: "Take Action", href: "#take-action", icon: faRocket },
-];
+interface NavbarProps {
+  items: NavItem[];
+  viewType?: "business" | "research"; 
+}
 
-export default function Navbar() {
+export default function Navbar({ items, viewType }: NavbarProps) {
   const [darkMode, setDarkMode] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -75,22 +70,54 @@ export default function Navbar() {
   return (
     <nav className={styles.navbar}>
       <div className={styles.navContainer}>
-        <a
-          href="#hero"
-          className={styles.navLogo}
-          onClick={(e) => scrollToSection(e, "#hero")}
-        >
-          SAD
-          <span style={{ filter: "drop-shadow(0 0 5px var(--accent-magenta))" }}>
-            <FontAwesomeIcon icon={faCompass} />
-          </span>
-          Labs
-        </a>
+        <div className={styles.logoGroup}>
+          <Link
+            href="/"  
+            className={styles.navLogo}
+          >
+            RAD
+            <span style={{ filter: "drop-shadow(0 0 5px var(--accent-magenta))" }}>
+              <FontAwesomeIcon icon={faCompass} />
+            </span>
+            Labs
+          </Link>
+
+          {viewType && (
+            <div className={styles.viewIndicatorWrapper}>
+              <div className={styles.viewIndicator}>
+                <FontAwesomeIcon 
+                  icon={viewType === "business" ? faCog : faMagnifyingGlass} 
+                  className={styles.viewIcon}
+                />
+                <span className={styles.viewLabel}>
+                  {viewType === "business" ? "Business" : "Research"} View
+                </span>
+              </div>
+              <Link 
+                href={viewType === "business" ? "/research" : "/business"}
+                className={styles.switchViewLink}
+              >
+                change to{" "}
+                <span style={{ color: 'var(--accent-sage)' }}>
+                  <FontAwesomeIcon 
+                    icon={viewType === "business" ? faMagnifyingGlass : faCog}
+                    style={{ fontSize: '0.9em' }}
+                  />
+                </span>
+                {" "}{viewType === "business" ? "research" : "business"}
+              </Link>
+            </div>
+          )}
+        </div>
 
         {/* Desktop menu */}
         <ul className={styles.navMenu}>
-          {navItems.map((item) => (
-            <li key={item.href} className={styles.navItem}>
+          {items.map((item, index) => (
+              <li 
+                key={item.href} 
+                className={styles.navItem}
+                style={{ animationDelay: `${index * 75}ms` }}
+              >
               <a
                 href={item.href}
                 className={styles.navLink}
@@ -103,7 +130,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Desktop toggle (hidden on mobile via CSS) */}
+        {/* Desktop toggle */}
         <div
           className={styles.themeToggle}
           onClick={() => setDarkMode(!darkMode)}
@@ -141,7 +168,6 @@ export default function Navbar() {
         <div className={styles.mobileHeader}>
           <span className={styles.mobileTitle}>Menu</span>
 
-          {/* Move theme toggle into panel on mobile */}
           <div
             className={styles.mobileToggle}
             onClick={() => setDarkMode(!darkMode)}
@@ -159,7 +185,7 @@ export default function Navbar() {
         </div>
 
         <ul className={styles.mobileMenu}>
-          {navItems.map((item) => (
+          {items.map((item) => (
             <li key={item.href}>
               <a
                 href={item.href}

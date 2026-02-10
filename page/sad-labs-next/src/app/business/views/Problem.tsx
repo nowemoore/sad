@@ -62,7 +62,7 @@ export default function Problem() {
             </div>
             <h3 className={styles.exposureTitle}>Talent Erosion</h3>
             <p className={styles.exposureText}>
-              However, even perfectly compliant and perfectly accurate AI can still cause problems by leading people to stop developing their own judgement. Eventually, there may be <a href="https://arxiv.org/pdf/2501.16946" target="_blank" rel="noopener noreferrer" style={{color: 'var(--accent-magenta)'}}>no one left</a> to tell the difference between a good and a bad recommendation or to step in if something goes wrong.
+              Even perfectly compliant and perfectly accurate AI can cause problems by leading people to stop developing their own judgement. Eventually, there may be <a href="https://arxiv.org/pdf/2501.16946" target="_blank" rel="noopener noreferrer" style={{color: 'var(--accent-magenta)'}}>no one left</a> to tell the difference between a good and a bad recommendation or to step in if something goes wrong.
             </p>
           </div>
 

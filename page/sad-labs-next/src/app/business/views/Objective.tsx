@@ -69,10 +69,10 @@ export default function Objective() {
 
       <div className={styles.ctaSection}>
         <div className={styles.objectiveCTAs}>
-          <ActionButton href="/contact">
+          <ActionButton href="https://calendly.com/nowemoore/1-on-1">
             Schedule Consultation
           </ActionButton>
-          <ActionButton href="/demo">
+          <ActionButton href="https://airtable.com/appGoEa2TUeXbwDRO/paghSplZigBcSSKJY/form">
             Sign Up for Pilot
           </ActionButton>
         </div>

@@ -327,6 +327,8 @@ body.light-mode {
 }
 
 @media (max-width: 640px) {
+
+  
   .section-title {
     text-align: center;
     font-size: 2rem;

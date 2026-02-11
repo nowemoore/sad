@@ -116,11 +116,11 @@
 }
 
 .pathwayCard:hover {
-  color: var(--accent-magenta);
+  color: var(--accent-sage);
 }
 
 .pathwayCard:hover .pathwayIcon {
-  color: var(--accent-magenta);
+  color: var(--accent-sage);
   transform: scale(1.1);
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
 }

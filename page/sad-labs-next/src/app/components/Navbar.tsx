@@ -113,11 +113,11 @@ export default function Navbar({ items, viewType }: NavbarProps) {
         {/* Desktop menu */}
         <ul className={styles.navMenu}>
           {items.map((item, index) => (
-              <li 
-                key={item.href} 
-                className={styles.navItem}
-                style={{ animationDelay: `${index * 75}ms` }}
-              >
+            <li 
+              key={item.href} 
+              className={styles.navItem}
+              style={{ animationDelay: `${index * 75}ms` }}
+            >
               <a
                 href={item.href}
                 className={styles.navLink}
@@ -169,6 +169,7 @@ export default function Navbar({ items, viewType }: NavbarProps) {
           <span className={styles.mobileTitle}>Menu</span>
         </div>
 
+        {/* Page links */}
         <ul className={styles.mobileMenu}>
           {items.map((item) => (
             <li key={item.href}>
@@ -184,37 +185,49 @@ export default function Navbar({ items, viewType }: NavbarProps) {
           ))}
         </ul>
 
-        {/* View switch links */}
+        {/* View toggle */}
         {viewType && (
-          <div className={styles.mobileViewSwitch}>
-            <Link 
-              href="/business" 
-              className={`${styles.mobileLink} ${viewType === "business" ? styles.activeView : ""}`}
-              onClick={() => setMenuOpen(false)}
-            >
-              <FontAwesomeIcon icon={faCog} className={styles.mobileIcon} />
-              Business View
-            </Link>
-            <Link 
-              href="/research" 
-              className={`${styles.mobileLink} ${viewType === "research" ? styles.activeView : ""}`}
-              onClick={() => setMenuOpen(false)}
-            >
-              <FontAwesomeIcon icon={faMagnifyingGlass} className={styles.mobileIcon} />
-              Research View
-            </Link>
+          <div className={styles.toggleSection}>
+            <span className={styles.toggleLabel}>View</span>
+            <div className={styles.toggleGroup}>
+              <Link
+                href="/business"
+                className={`${styles.toggleBtn} ${viewType === "business" ? styles.active : ""}`}
+                onClick={() => setMenuOpen(false)}
+              >
+                <FontAwesomeIcon icon={faCog} />
+                Business
+              </Link>
+              <Link
+                href="/research"
+                className={`${styles.toggleBtn} ${viewType === "research" ? styles.active : ""}`}
+                onClick={() => setMenuOpen(false)}
+              >
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
+                Research
+              </Link>
+            </div>
           </div>
         )}
 
-        {/* Close button at bottom */}
-        <button
-          type="button"
-          className={styles.mobileCloseBtn}
-          aria-label="Close menu"
-          onClick={() => setMenuOpen(false)}
-        >
-          <FontAwesomeIcon icon={faXmark} />
-        </button>
+        {/* Mode toggle */}
+        <div className={styles.toggleSection}>
+          <span className={styles.toggleLabel}>Mode</span>
+          <div className={styles.toggleGroup}>
+            <button
+              className={`${styles.toggleBtn} ${darkMode ? styles.active : ""}`}
+              onClick={() => setDarkMode(true)}
+            >
+              月 Dark
+            </button>
+            <button
+              className={`${styles.toggleBtn} ${!darkMode ? styles.active : ""}`}
+              onClick={() => setDarkMode(false)}
+            >
+              日 Light
+            </button>
+          </div>
+        </div>
       </div>
     </nav>
   );

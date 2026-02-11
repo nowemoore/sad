@@ -15,12 +15,12 @@ export default function Approach() {
       } as React.CSSProperties}
     >
       <div className="section-container">
-        <h1 className="section-title from-bottom"><FontAwesomeIcon icon={faFlask}></FontAwesomeIcon> Beyond your regular audit</h1>
+        <h1 className="section-title from-bottom"><FontAwesomeIcon icon={faFlask}></FontAwesomeIcon> Future-Ready Monitoring for AI Risk</h1>
         <p className="section-text from-bottom">
           Standard monitoring relies on intuition and experience, but the risks AI poses are <span style={{color: "var(--accent-magenta)"}}>unprecedented</span>. Unexpected, emerging, and seemingly minor risks that scale exponentially remain overlooked. RAD approach, grounded in scientifically unique methodology, mitigates that by paying attention to: 
         </p>
 
-        <div className={styles.featureGrid} style={{ gridTemplateColumns: '1fr 1fr 1fr' }}>
+        <div className={styles.featureGrid}>
           <div className={styles.featureItem}>
             <div className={styles.featureIcon}>
               <FontAwesomeIcon icon={faHandshake} />

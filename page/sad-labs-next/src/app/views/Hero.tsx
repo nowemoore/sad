@@ -47,8 +47,8 @@ export default function Hero({ viewType = "landing" }: HeroProps) {
 
           <span className={styles.heroSubtitle}>
             AI makes decisions faster. RAD Labs are here to help humans make sure that{" "}
-            <span style={{color: "var(--accent-magenta)"}}>efficiency</span> doesn't cost them{" "}
-            <span style={{color: "var(--accent-magenta)"}}>control</span>.
+            <span style={{color: "var(--accent-magenta-soft)"}}>efficiency</span> doesn't cost them{" "}
+            <span style={{color: "var(--accent-magenta-soft)"}}>control</span>.
           </span>
 
           <span className={styles.heroSubtitle} style={{ marginTop: "2rem", color: "var(--text-primary)", textAlign: 'center', fontWeight: '500' }}>

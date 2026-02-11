@@ -1088,8 +1088,40 @@
 @media (max-width: 640px) {
   .timeline {
     padding: 2rem 0 2rem 2.5rem;
+    margin: 0 auto 50rem;
     gap: 1.75rem;
     max-width: 100%;
+  }
+
+  .mobileViewSwitch {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .activeView {
+    color: var(--accent-sage) !important;
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .mobileCloseBtn {
+    margin-top: auto;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 0.75rem;
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .mobileCloseBtn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
   }
 
   .line {

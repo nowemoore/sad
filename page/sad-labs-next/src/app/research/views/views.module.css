@@ -806,4 +806,13 @@
   .approachText {
     font-size: 1.1rem;
   }
+
+  .objectiveGrid,
+  .featureGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 100%;
+    margin-left: 0;
+    transform: none;
+  }
 }

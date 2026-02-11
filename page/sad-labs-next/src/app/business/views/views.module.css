@@ -172,4 +172,24 @@
   .objectiveItem {
     opacity: 1;
   }
+  .featureItem {
+    opacity: 1;
+  }
+
+  .featureTitle {
+    font-size: 1.2rem;
+  }
+
+  .featureText {
+    font-size: 1rem;
+  }
+
+  .objectiveGrid,
+  .featureGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 100%;
+    margin-left: 0;
+    transform: none;
+  }
 }

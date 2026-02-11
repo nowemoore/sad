@@ -167,21 +167,6 @@ export default function Navbar({ items, viewType }: NavbarProps) {
       <div className={`${styles.mobilePanel} ${menuOpen ? styles.open : ""}`}>
         <div className={styles.mobileHeader}>
           <span className={styles.mobileTitle}>Menu</span>
-
-          <div
-            className={styles.mobileToggle}
-            onClick={() => setDarkMode(!darkMode)}
-            aria-label="Toggle dark mode"
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") setDarkMode(!darkMode);
-            }}
-          >
-            <div className={`${styles.toggleTrack} ${darkMode ? styles.dark : styles.light}`}>
-              <div className={styles.toggleSlider}>{darkMode ? "月" : "日"}</div>
-            </div>
-          </div>
         </div>
 
         <ul className={styles.mobileMenu}>
@@ -198,6 +183,38 @@ export default function Navbar({ items, viewType }: NavbarProps) {
             </li>
           ))}
         </ul>
+
+        {/* View switch links */}
+        {viewType && (
+          <div className={styles.mobileViewSwitch}>
+            <Link 
+              href="/business" 
+              className={`${styles.mobileLink} ${viewType === "business" ? styles.activeView : ""}`}
+              onClick={() => setMenuOpen(false)}
+            >
+              <FontAwesomeIcon icon={faCog} className={styles.mobileIcon} />
+              Business View
+            </Link>
+            <Link 
+              href="/research" 
+              className={`${styles.mobileLink} ${viewType === "research" ? styles.activeView : ""}`}
+              onClick={() => setMenuOpen(false)}
+            >
+              <FontAwesomeIcon icon={faMagnifyingGlass} className={styles.mobileIcon} />
+              Research View
+            </Link>
+          </div>
+        )}
+
+        {/* Close button at bottom */}
+        <button
+          type="button"
+          className={styles.mobileCloseBtn}
+          aria-label="Close menu"
+          onClick={() => setMenuOpen(false)}
+        >
+          <FontAwesomeIcon icon={faXmark} />
+        </button>
       </div>
     </nav>
   );

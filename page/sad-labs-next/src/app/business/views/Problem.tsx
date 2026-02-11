@@ -12,7 +12,7 @@ export default function Problem() {
         className="section problem-section surface-top"
         style={{
         '--section-bg-image': 'url(https://images.unsplash.com/photo-1500577329392-f0af6d7dd827?q=80&w=3006&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
-        '--section-overlay': 'rgba(0, 0, 0, 0.85)' 
+        '--section-overlay': 'rgba(var(--overlay-rgb), 0.85)'
       } as React.CSSProperties}>
       <div className="section-container">
         <h1 className="section-title from-bottom">

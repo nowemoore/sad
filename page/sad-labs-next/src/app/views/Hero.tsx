@@ -20,7 +20,7 @@ export default function Hero({ viewType = "landing" }: HeroProps) {
         className={`section ${styles.heroSection}`} 
         style={{
           '--section-bg-image': 'url(https://images.unsplash.com/photo-1727434032792-c7ef921ae086?q=80&w=2232&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
-          '--section-overlay': 'rgba(0, 0, 0, 0.85)' 
+          '--section-overlay': 'rgba(var(--overlay-rgb), 0.85)' 
         } as React.CSSProperties}
       >
         <div className={styles.heroContent}>
@@ -85,7 +85,7 @@ export default function Hero({ viewType = "landing" }: HeroProps) {
       className={`section ${styles.heroSection}`} 
       style={{
         '--section-bg-image': 'url(https://images.unsplash.com/photo-1727434032792-c7ef921ae086?q=80&w=2232&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
-        '--section-overlay': 'rgba(0, 0, 0, 0.85)' 
+        '--section-overlay': 'rgba(var(--overlay-rgb), 0.85)'
       } as React.CSSProperties}
     >
       <div className={styles.heroContent}>

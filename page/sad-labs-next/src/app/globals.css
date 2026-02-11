@@ -77,13 +77,7 @@ p {
   --surface-root: #131212;
   --surface-elevated: #1f1f1f;
   --surface-overlay: #262626;
-
-  --hero-gradient: radial-gradient(
-    1200px 600px at 50% 40%,
-    #1c1c1c 0%,
-    #141414 60%,
-    #101010 100%
-  );
+  --overlay-rgb: 0, 0, 0;
 
   /* Accents */
   --accent-magenta: #bd48b6;
@@ -96,10 +90,6 @@ p {
 
   --accent-ivory: #fff8f0;
 
-  /* =========================
-     Background tones (THEME-RESPONSIVE)
-     Dark mode defaults
-     ========================= */
   --tone-0: #141414;
   --tone-1: var(--surface-root);
   --tone-2: #181818;
@@ -124,6 +114,9 @@ body.light-mode {
   --surface-elevated: #f7f8f4;
   --surface-overlay: #fcfbf8;
 
+  --overlay-rgb: 252, 251, 248;
+  --accent-sage: #429379;
+  --accent-magenta-soft: #e140e1;
   --hero-gradient: radial-gradient(
     1200px 600px at 50% 40%,
     #ffffff 0%,

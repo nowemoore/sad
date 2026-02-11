@@ -10,7 +10,7 @@ export default function Objective() {
       className="section objective-section"
       style={{
         '--section-bg-image': 'url(https://images.unsplash.com/photo-1573537805874-4cedc5d389ce?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
-        '--section-overlay': 'rgba(0, 0, 0, 0.9)' 
+        '--section-overlay': 'rgba(var(--overlay-rgb), 0.9)' 
       } as React.CSSProperties}>
       <div className="section-container">
         <h1 className="section-title from-bottom"><FontAwesomeIcon icon={faBullseye}></FontAwesomeIcon> Lab Objectives</h1>

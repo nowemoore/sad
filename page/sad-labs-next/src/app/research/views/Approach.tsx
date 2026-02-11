@@ -24,7 +24,7 @@ return (
           This research agenda tackles a complex measurement problem by breaking it into tractable components. The investigative model is built on <span style={{color: 'var(--accent-magenta-soft)'}}>three principles</span>:
         </p>
 
-        <div className={styles.featureGrid} style={{ gridTemplateColumns: '1fr 1fr 1fr' }}>
+        <div className={styles.featureGrid}>
           <div className={styles.featureItem}>
             <div className={styles.featureIcon}>
               <FontAwesomeIcon icon={faHandshake} />

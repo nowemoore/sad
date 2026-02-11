@@ -727,4 +727,65 @@
   .approachText {
     font-size: 1.1rem;
   }
+
+  .objectiveGrid,
+  .featureGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 100%;
+    margin-left: 0;
+    transform: none;
+  }
+
+    /* Hero centering for mobile */
+  .heroSection {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .heroContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1.5rem;
+    padding-top: 0; 
+  }
+
+  .heroSubtitleTop {
+    text-align: center;
+  }
+
+  .heroTitle {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .heroSubtitle {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .heroPathways {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .pathwayCard {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .chevronSection {
+    margin-top: 3rem;
+  }
+
+  .chevronText {
+    padding: 0 1rem;
+  }
 }

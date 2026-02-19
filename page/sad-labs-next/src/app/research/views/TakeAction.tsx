@@ -40,7 +40,7 @@ const actions = [
     title: "Join the Next Infosession",
     description: (
       <>
-        New here? Join an infosession to hear what's being built, why it matters, and whether there's a role for you. <br></br> <span style={{color: 'var(--accent-magenta)'}}>Next session: 11 Feb 2026.</span>
+        New here? Join an infosession to hear what's being built, why it matters, and whether there's a role for you. <br></br> <span style={{color: 'var(--accent-magenta)'}}>Next session: TBD.</span>
       </>
     ),
     cta: "Sign Up",
